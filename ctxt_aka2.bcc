@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.scContextFile org.eventb.core.accurate="true" org.eventb.core.configuration="org.eventb.core.fwd">
+    <org.eventb.core.scExtendsContext name="'" org.eventb.core.scTarget="/securityDomainModel/ctxt_aka1.bcc|org.eventb.core.scContextFile#ctxt_aka1" org.eventb.core.source="/securityDomainModel/ctxt_aka2.buc|org.eventb.core.contextFile#ctxt_aka2|org.eventb.core.extendsContext#'"/>
+    <org.eventb.core.scInternalContext name="ctxt_aka">
+        <org.eventb.core.scAxiom name="'" org.eventb.core.label="axm1" org.eventb.core.predicate="I∈Agent" org.eventb.core.source="/securityDomainModel/ctxt_aka.buc|org.eventb.core.contextFile#ctxt_aka|org.eventb.core.axiom#axm1" org.eventb.core.theorem="false"/>
+        <org.eventb.core.scConstant name="I" org.eventb.core.source="/securityDomainModel/ctxt_aka.buc|org.eventb.core.contextFile#ctxt_aka|org.eventb.core.constant#cst1" org.eventb.core.type="Agent"/>
+        <org.eventb.core.scCarrierSet name="T" org.eventb.core.source="/securityDomainModel/ctxt_aka.buc|org.eventb.core.contextFile#ctxt_aka|org.eventb.core.carrierSet#set1" org.eventb.core.type="ℙ(T)"/>
+        <org.eventb.core.scCarrierSet name="Agent" org.eventb.core.source="/securityDomainModel/ctxt_aka.buc|org.eventb.core.contextFile#ctxt_aka|org.eventb.core.carrierSet#set2" org.eventb.core.type="ℙ(Agent)"/>
+        <org.eventb.core.scCarrierSet name="MSG" org.eventb.core.source="/securityDomainModel/ctxt_aka.buc|org.eventb.core.contextFile#ctxt_aka|org.eventb.core.carrierSet#set3" org.eventb.core.type="ℙ(MSG)"/>
+    </org.eventb.core.scInternalContext>
+    <org.eventb.core.scInternalContext name="ctxt_aka1">
+        <org.eventb.core.scExtendsContext name="'" org.eventb.core.scTarget="/securityDomainModel/ctxt_aka.bcc|org.eventb.core.scContextFile#ctxt_aka" org.eventb.core.source="/securityDomainModel/ctxt_aka1.buc|org.eventb.core.contextFile#ctxt_aka1|org.eventb.core.extendsContext#'"/>
+        <org.eventb.core.scAxiom name="ctxt_akb" org.eventb.core.label="axm1" org.eventb.core.predicate="partition(Agent)" org.eventb.core.source="/securityDomainModel/ctxt_aka1.buc|org.eventb.core.contextFile#ctxt_aka1|org.eventb.core.axiom#axm1" org.eventb.core.theorem="false"/>
+        <org.eventb.core.scAxiom name="ctxt_akc" org.eventb.core.label="axm2" org.eventb.core.predicate="Attack_Cond∈BOOL" org.eventb.core.source="/securityDomainModel/ctxt_aka1.buc|org.eventb.core.contextFile#ctxt_aka1|org.eventb.core.axiom#axm4" org.eventb.core.theorem="false"/>
+        <org.eventb.core.scConstant name="Attack_Cond" org.eventb.core.source="/securityDomainModel/ctxt_aka1.buc|org.eventb.core.contextFile#ctxt_aka1|org.eventb.core.constant#axm3" org.eventb.core.type="BOOL"/>
+        <org.eventb.core.scCarrierSet name="Key" org.eventb.core.source="/securityDomainModel/ctxt_aka1.buc|org.eventb.core.contextFile#ctxt_aka1|org.eventb.core.carrierSet#axm2" org.eventb.core.type="ℙ(Key)"/>
+    </org.eventb.core.scInternalContext>
+    <org.eventb.core.scCarrierSet name="SQN" org.eventb.core.source="/securityDomainModel/ctxt_aka2.buc|org.eventb.core.contextFile#ctxt_aka2|org.eventb.core.carrierSet#)" org.eventb.core.type="ℙ(SQN)"/>
+    <org.eventb.core.scCarrierSet name="RAND" org.eventb.core.source="/securityDomainModel/ctxt_aka2.buc|org.eventb.core.contextFile#ctxt_aka2|org.eventb.core.carrierSet#*" org.eventb.core.type="ℙ(RAND)"/>
+</org.eventb.core.scContextFile>

@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.machineFile org.eventb.core.configuration="org.eventb.core.fwd" version="5">
+    <org.eventb.core.seesContext name="element1" org.eventb.core.target="ctxt_ssl"/>
+    <org.eventb.core.variable name="var1" org.eventb.core.identifier="trans"/>
+    <org.eventb.core.variable name="var2" org.eventb.core.identifier="end"/>
+    <org.eventb.core.variable name="var3" org.eventb.core.identifier="t_src"/>
+    <org.eventb.core.variable name="var4" org.eventb.core.identifier="t_dst"/>
+    <org.eventb.core.variable name="var5" org.eventb.core.identifier="t_bld_dst"/>
+    <org.eventb.core.variable name="var6" org.eventb.core.identifier="channel"/>
+    <org.eventb.core.variable name="var7" org.eventb.core.identifier="msg_src"/>
+    <org.eventb.core.variable name="var8" org.eventb.core.identifier="msg_dst"/>
+    <org.eventb.core.variable name="var9" org.eventb.core.identifier="msg_t"/>
+    <org.eventb.core.invariant name="inv1" org.eventb.core.label="inv1" org.eventb.core.predicate="trans ⊆ T"/>
+    <org.eventb.core.invariant name="inv2" org.eventb.core.label="inv2" org.eventb.core.predicate="end ⊆ trans"/>
+    <org.eventb.core.invariant name="inv3" org.eventb.core.label="inv3" org.eventb.core.predicate="t_src ∈ trans → Agent "/>
+    <org.eventb.core.invariant name="inv4" org.eventb.core.label="inv4" org.eventb.core.predicate="t_dst ∈ end → Agent"/>
+    <org.eventb.core.invariant name="inv5" org.eventb.core.label="inv5" org.eventb.core.predicate="t_bld_dst ∈ trans → Agent"/>
+    <org.eventb.core.invariant name="inv6" org.eventb.core.label="inv6" org.eventb.core.predicate="channel ⊆ MSG"/>
+    <org.eventb.core.invariant name="inv7" org.eventb.core.label="inv7" org.eventb.core.predicate="msg_src ∈ channel → Agent"/>
+    <org.eventb.core.invariant name="inv8" org.eventb.core.label="inv8" org.eventb.core.predicate="msg_dst ∈ channel → Agent"/>
+    <org.eventb.core.invariant name="inv9" org.eventb.core.label="inv9" org.eventb.core.predicate="msg_t ∈ channel → T"/>
+    <org.eventb.core.invariant name="element6" org.eventb.core.label="inv10" org.eventb.core.predicate="Verification ∈ BOOL"/>
+    <org.eventb.core.invariant name="element8" org.eventb.core.label="inv11" org.eventb.core.predicate="Session_Key ∈ BOOL"/>
+    <org.eventb.core.invariant name="inv10" org.eventb.core.label="inv12" org.eventb.core.predicate="∀t·t ∈ end ⇒ t_dst(t) = t_bld_dst(t)"/>
+    <org.eventb.core.event name="evt1" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="INITIALISATION">
+        <org.eventb.core.action name="act1" org.eventb.core.assignment="trans ≔ ∅" org.eventb.core.label="act1"/>
+        <org.eventb.core.action name="act2" org.eventb.core.assignment="end ≔ ∅" org.eventb.core.label="act2"/>
+        <org.eventb.core.action name="act3" org.eventb.core.assignment="t_src ≔ ∅" org.eventb.core.label="act3"/>
+        <org.eventb.core.action name="act4" org.eventb.core.assignment="t_dst ≔ ∅" org.eventb.core.label="act4"/>
+        <org.eventb.core.action name="act5" org.eventb.core.assignment="channel ≔ ∅" org.eventb.core.label="act5"/>
+        <org.eventb.core.action name="act6" org.eventb.core.assignment="msg_src ≔ ∅" org.eventb.core.label="act6"/>
+        <org.eventb.core.action name="act7" org.eventb.core.assignment="msg_dst ≔ ∅" org.eventb.core.label="act7"/>
+        <org.eventb.core.action name="act8" org.eventb.core.assignment="msg_t ≔ ∅" org.eventb.core.label="act8"/>
+        <org.eventb.core.action name="act9" org.eventb.core.assignment="t_bld_dst ≔ ∅" org.eventb.core.label="act9"/>
+        <org.eventb.core.action name="act:" org.eventb.core.assignment="Verification ≔ FALSE" org.eventb.core.label="act10"/>
+        <org.eventb.core.action name="act;" org.eventb.core.assignment="Session_Key ≔ FALSE" org.eventb.core.label="act11"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="evt2" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="Client_Say_Hello">
+        <org.eventb.core.parameter name="'" org.eventb.core.identifier="t1"/>
+        <org.eventb.core.parameter name="." org.eventb.core.identifier="client"/>
+        <org.eventb.core.parameter name="/" org.eventb.core.identifier="server"/>
+        <org.eventb.core.parameter name="(" org.eventb.core.identifier="client_hello"/>
+        <org.eventb.core.guard name=")" org.eventb.core.label="grd1" org.eventb.core.predicate="t1 ∈ T ∖ trans "/>
+        <org.eventb.core.guard name="0" org.eventb.core.label="grd2" org.eventb.core.predicate="client ∈ Agent ∧ server ∈ Agent ∧ client ≠ server"/>
+        <org.eventb.core.guard name="*" org.eventb.core.label="grd3" org.eventb.core.predicate="client_hello ∈ MSG ∖ channel"/>
+        <org.eventb.core.action name="+" org.eventb.core.assignment="trans ≔ trans ∪ {t1}" org.eventb.core.label="act1"/>
+        <org.eventb.core.action name="," org.eventb.core.assignment="t_src(t1) ≔ client" org.eventb.core.label="act2"/>
+        <org.eventb.core.action name="-" org.eventb.core.assignment="t_bld_dst(t1) ≔ server" org.eventb.core.label="act3"/>
+        <org.eventb.core.action name="1" org.eventb.core.assignment="channel ≔ channel ∪ {client_hello}" org.eventb.core.label="act4"/>
+        <org.eventb.core.action name="2" org.eventb.core.assignment="msg_src(client_hello) ≔ client" org.eventb.core.label="act5"/>
+        <org.eventb.core.action name="3" org.eventb.core.assignment="msg_dst(client_hello) ≔ server" org.eventb.core.label="act6"/>
+        <org.eventb.core.action name="4" org.eventb.core.assignment="msg_t(client_hello) ≔ t1" org.eventb.core.label="act7"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="evt3" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="Server_Say_Hello">
+        <org.eventb.core.parameter name="'" org.eventb.core.identifier="t1"/>
+        <org.eventb.core.parameter name="(" org.eventb.core.identifier="client"/>
+        <org.eventb.core.parameter name=")" org.eventb.core.identifier="server"/>
+        <org.eventb.core.guard name="*" org.eventb.core.label="grd1" org.eventb.core.predicate="t1 ∈ trans"/>
+        <org.eventb.core.guard name="+" org.eventb.core.label="grd2" org.eventb.core.predicate="client ∈ Agent ∧ server ∈ Agent ∧ client ≠ server"/>
+        <org.eventb.core.guard name="," org.eventb.core.label="grd3" org.eventb.core.predicate="server_hello ∈ MSG ∖ channel"/>
+        <org.eventb.core.guard name="-" org.eventb.core.label="grd4" org.eventb.core.predicate="client_hello ∈ channel"/>
+        <org.eventb.core.action name="/" org.eventb.core.assignment="channel ≔ channel ∪ {server_hello}" org.eventb.core.label="act1"/>
+        <org.eventb.core.action name="0" org.eventb.core.assignment="msg_src(server_hello) ≔ server" org.eventb.core.label="act2"/>
+        <org.eventb.core.action name="1" org.eventb.core.assignment="msg_dst(server_hello) ≔ client" org.eventb.core.label="act3"/>
+        <org.eventb.core.action name="2" org.eventb.core.assignment="msg_t(server_hello) ≔ t1" org.eventb.core.label="act4"/>
+        <org.eventb.core.parameter name="3" org.eventb.core.identifier="client_hello"/>
+        <org.eventb.core.parameter name="4" org.eventb.core.identifier="server_hello"/>
+        <org.eventb.core.guard name="5" org.eventb.core.label="grd5" org.eventb.core.predicate="msg_src(client_hello) = client ∧ msg_dst(client_hello) = server ∧ msg_t(client_hello) = t1"/>
+        <org.eventb.core.guard name="6" org.eventb.core.label="grd6" org.eventb.core.predicate="t_bld_dst(t1) = server"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="evt4" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="End_Hello">
+        <org.eventb.core.parameter name="'" org.eventb.core.identifier="t1"/>
+        <org.eventb.core.parameter name="(" org.eventb.core.identifier="client"/>
+        <org.eventb.core.parameter name=")" org.eventb.core.identifier="server"/>
+        <org.eventb.core.guard name="*" org.eventb.core.label="grd1" org.eventb.core.predicate="t1 ∈ trans ∖ end"/>
+        <org.eventb.core.guard name="+" org.eventb.core.label="grd2" org.eventb.core.predicate="client ∈ Agent ∧ server ∈ Agent ∧ client ≠ server"/>
+        <org.eventb.core.guard name="," org.eventb.core.label="grd3" org.eventb.core.predicate="server_hello ∈ channel"/>
+        <org.eventb.core.guard name="3" org.eventb.core.label="grd4" org.eventb.core.predicate="t_src(t1) = client"/>
+        <org.eventb.core.guard name="-" org.eventb.core.label="grd5" org.eventb.core.predicate="msg_dst(server_hello) = client"/>
+        <org.eventb.core.guard name="." org.eventb.core.label="grd6" org.eventb.core.predicate="msg_t(server_hello) = t1"/>
+        <org.eventb.core.guard name="/" org.eventb.core.label="grd7" org.eventb.core.predicate="msg_src(server_hello) = server"/>
+        <org.eventb.core.action name="6" org.eventb.core.assignment="end ≔ end ∪ {t1}" org.eventb.core.label="act1"/>
+        <org.eventb.core.action name="1" org.eventb.core.assignment="t_dst(t1) ≔ server" org.eventb.core.label="act2"/>
+        <org.eventb.core.parameter name="2" org.eventb.core.identifier="server_hello"/>
+        <org.eventb.core.guard name="4" org.eventb.core.label="grd8" org.eventb.core.predicate="msg_src(server_hello) = t_bld_dst(t1)"/>
+        <org.eventb.core.guard name="7" org.eventb.core.label="grd9" org.eventb.core.predicate="Verification = TRUE"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="evt6" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="Send_Session_Key">
+        <org.eventb.core.parameter name="'" org.eventb.core.identifier="t"/>
+        <org.eventb.core.parameter name="(" org.eventb.core.identifier="client"/>
+        <org.eventb.core.parameter name=")" org.eventb.core.identifier="server"/>
+        <org.eventb.core.guard name="*" org.eventb.core.label="grd1" org.eventb.core.predicate="t ∈ trans ∖ end"/>
+        <org.eventb.core.guard name="+" org.eventb.core.label="grd2" org.eventb.core.predicate="client ∈ Agent ∧ server ∈ Agent ∧ client ≠ server"/>
+        <org.eventb.core.guard name="5" org.eventb.core.label="grd3" org.eventb.core.predicate="t_src(t) = client"/>
+        <org.eventb.core.guard name="6" org.eventb.core.label="grd4" org.eventb.core.predicate="t_bld_dst(t) = server"/>
+        <org.eventb.core.guard name="," org.eventb.core.label="grd5" org.eventb.core.predicate="msg ∈ MSG ∖ channel"/>
+        <org.eventb.core.action name="." org.eventb.core.assignment="channel ≔ channel ∪ {msg}" org.eventb.core.label="act1"/>
+        <org.eventb.core.action name="act1" org.eventb.core.assignment="msg_src(msg) ≔ client" org.eventb.core.label="act2"/>
+        <org.eventb.core.action name="act2" org.eventb.core.assignment="msg_dst(msg) ≔ server" org.eventb.core.label="act3"/>
+        <org.eventb.core.action name="act3" org.eventb.core.assignment="msg_t(msg) ≔ t" org.eventb.core.label="act4"/>
+        <org.eventb.core.parameter name="3" org.eventb.core.identifier="msg"/>
+        <org.eventb.core.guard name="4" org.eventb.core.label="grd6" org.eventb.core.predicate="Session_Key = FALSE"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="evt7" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="End_Session_Key">
+        <org.eventb.core.parameter name="'" org.eventb.core.identifier="t"/>
+        <org.eventb.core.parameter name="(" org.eventb.core.identifier="client"/>
+        <org.eventb.core.parameter name=")" org.eventb.core.identifier="server"/>
+        <org.eventb.core.guard name="*" org.eventb.core.label="grd1" org.eventb.core.predicate="t ∈ trans ∖ end"/>
+        <org.eventb.core.guard name="+" org.eventb.core.label="grd2" org.eventb.core.predicate="client ∈ Agent ∧ server ∈ Agent ∧ client ≠ server"/>
+        <org.eventb.core.guard name="-" org.eventb.core.label="grd3" org.eventb.core.predicate="msg ∈ channel"/>
+        <org.eventb.core.guard name="." org.eventb.core.label="grd4" org.eventb.core.predicate="msg_t(msg) = t "/>
+        <org.eventb.core.guard name="grd1" org.eventb.core.label="grd5" org.eventb.core.predicate="msg_src(msg) = client "/>
+        <org.eventb.core.guard name="grd2" org.eventb.core.label="grd6" org.eventb.core.predicate="msg_dst(msg) = server "/>
+        <org.eventb.core.parameter name="4" org.eventb.core.identifier="msg"/>
+        <org.eventb.core.action name="5" org.eventb.core.assignment="Session_Key ≔ TRUE " org.eventb.core.label="act1"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="element2" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="Client_end">
+        <org.eventb.core.parameter name="'" org.eventb.core.identifier="client"/>
+        <org.eventb.core.parameter name="(" org.eventb.core.identifier="server"/>
+        <org.eventb.core.parameter name=")" org.eventb.core.identifier="t3"/>
+        <org.eventb.core.guard name="*" org.eventb.core.label="grd1" org.eventb.core.predicate="t3 ∈ T ∖ trans"/>
+        <org.eventb.core.guard name="+" org.eventb.core.label="grd2" org.eventb.core.predicate="client ∈ Agent ∧ server ∈ Agent ∧ client ≠ server"/>
+        <org.eventb.core.guard name="." org.eventb.core.label="grd3" org.eventb.core.predicate="client_end ∈ MSG ∖ channel"/>
+        <org.eventb.core.action name="4" org.eventb.core.assignment="trans ≔ trans ∪ {t3}" org.eventb.core.label="act1"/>
+        <org.eventb.core.action name="5" org.eventb.core.assignment="t_src(t3) ≔ client" org.eventb.core.label="act2"/>
+        <org.eventb.core.action name="6" org.eventb.core.assignment="t_bld_dst(t3) ≔ server" org.eventb.core.label="act3"/>
+        <org.eventb.core.action name="/" org.eventb.core.assignment="channel ≔ channel ∪ {client_end}" org.eventb.core.label="act4"/>
+        <org.eventb.core.action name="0" org.eventb.core.assignment="msg_src(client_end) ≔ client" org.eventb.core.label="act5"/>
+        <org.eventb.core.action name="1" org.eventb.core.assignment="msg_dst(client_end) ≔ server" org.eventb.core.label="act6"/>
+        <org.eventb.core.action name="2" org.eventb.core.assignment="msg_t(client_end) ≔ t3" org.eventb.core.label="act7"/>
+        <org.eventb.core.parameter name="3" org.eventb.core.identifier="client_end"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="element3" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="Server_end">
+        <org.eventb.core.parameter name="'" org.eventb.core.identifier="client"/>
+        <org.eventb.core.parameter name="(" org.eventb.core.identifier="server"/>
+        <org.eventb.core.parameter name=")" org.eventb.core.identifier="t3"/>
+        <org.eventb.core.guard name="*" org.eventb.core.label="grd1" org.eventb.core.predicate="t3 ∈ trans"/>
+        <org.eventb.core.guard name="+" org.eventb.core.label="grd2" org.eventb.core.predicate="client ∈ Agent ∧ server ∈ Agent ∧ client ≠ server"/>
+        <org.eventb.core.guard name="," org.eventb.core.label="grd3" org.eventb.core.predicate="client_end ∈ channel ∧ server_end ∈ MSG ∖ channel"/>
+        <org.eventb.core.guard name="-" org.eventb.core.label="grd4" org.eventb.core.predicate="msg_src(client_end) = client"/>
+        <org.eventb.core.guard name="." org.eventb.core.label="grd5" org.eventb.core.predicate="msg_dst(client_end) = server"/>
+        <org.eventb.core.guard name="/" org.eventb.core.label="grd6" org.eventb.core.predicate="msg_t(client_end) = t3"/>
+        <org.eventb.core.guard name="0" org.eventb.core.label="grd7" org.eventb.core.predicate="t_bld_dst(t3) = server"/>
+        <org.eventb.core.action name="1" org.eventb.core.assignment="channel ≔ channel ∪ {server_end}" org.eventb.core.label="act1"/>
+        <org.eventb.core.action name="2" org.eventb.core.assignment="msg_src(server_end) ≔ server" org.eventb.core.label="act2"/>
+        <org.eventb.core.action name="3" org.eventb.core.assignment="msg_dst(server_end) ≔ client" org.eventb.core.label="act3"/>
+        <org.eventb.core.action name="4" org.eventb.core.assignment="msg_t(server_end) ≔ t3" org.eventb.core.label="act4"/>
+        <org.eventb.core.parameter name="5" org.eventb.core.identifier="client_end"/>
+        <org.eventb.core.parameter name="6" org.eventb.core.identifier="server_end"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="element4" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="End_Handshake">
+        <org.eventb.core.parameter name="'" org.eventb.core.identifier="client"/>
+        <org.eventb.core.parameter name="(" org.eventb.core.identifier="server"/>
+        <org.eventb.core.parameter name=")" org.eventb.core.identifier="t3"/>
+        <org.eventb.core.guard name="*" org.eventb.core.label="grd1" org.eventb.core.predicate="t3 ∈ trans ∖ end"/>
+        <org.eventb.core.guard name="+" org.eventb.core.label="grd2" org.eventb.core.predicate="client ∈ Agent ∧ server ∈ Agent ∧ client ≠ server"/>
+        <org.eventb.core.guard name="," org.eventb.core.label="grd3" org.eventb.core.predicate="t_src(t3) = client"/>
+        <org.eventb.core.guard name="-" org.eventb.core.label="grd4" org.eventb.core.predicate="server_end ∈ channel"/>
+        <org.eventb.core.guard name="." org.eventb.core.label="grd5" org.eventb.core.predicate="msg_src(server_end) = server"/>
+        <org.eventb.core.guard name="/" org.eventb.core.label="grd6" org.eventb.core.predicate="msg_dst(server_end) = client"/>
+        <org.eventb.core.guard name="0" org.eventb.core.label="grd7" org.eventb.core.predicate="msg_t(server_end) = t3"/>
+        <org.eventb.core.guard name="1" org.eventb.core.label="grd8" org.eventb.core.predicate="msg_src(server_end) = t_bld_dst(t3)"/>
+        <org.eventb.core.action name="2" org.eventb.core.assignment="end ≔ end ∪ {t3}" org.eventb.core.label="act1"/>
+        <org.eventb.core.action name="3" org.eventb.core.assignment="t_dst(t3) ≔ server" org.eventb.core.label="act2"/>
+        <org.eventb.core.parameter name="4" org.eventb.core.identifier="server_end"/>
+        <org.eventb.core.guard name="5" org.eventb.core.label="grd9" org.eventb.core.predicate="Session_Key = TRUE"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="evt8" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="Attacker">
+        <org.eventb.core.parameter name="'" org.eventb.core.identifier="t1"/>
+        <org.eventb.core.parameter name=")" org.eventb.core.identifier="intruder_hello"/>
+        <org.eventb.core.guard name="*" org.eventb.core.label="grd1" org.eventb.core.predicate="t1 ∈ trans"/>
+        <org.eventb.core.guard name="4" org.eventb.core.label="grd2" org.eventb.core.predicate="client ∈ Agent"/>
+        <org.eventb.core.guard name="," org.eventb.core.label="grd3" org.eventb.core.predicate="intruder_hello ∈ MSG ∖ channel"/>
+        <org.eventb.core.action name="." org.eventb.core.assignment="channel ≔ channel ∪ {intruder_hello}" org.eventb.core.label="act1"/>
+        <org.eventb.core.action name="/" org.eventb.core.assignment="msg_src(intruder_hello) ≔ I" org.eventb.core.label="act2"/>
+        <org.eventb.core.action name="0" org.eventb.core.assignment="msg_dst(intruder_hello) ≔ client" org.eventb.core.label="act3"/>
+        <org.eventb.core.action name="1" org.eventb.core.assignment="msg_t(intruder_hello) ≔ t1" org.eventb.core.label="act4"/>
+        <org.eventb.core.parameter name="2" org.eventb.core.identifier="client"/>
+        <org.eventb.core.guard name="5" org.eventb.core.label="grd4" org.eventb.core.predicate="client ≠ I"/>
+    </org.eventb.core.event>
+    <org.eventb.core.variable name="element5" org.eventb.core.identifier="Verification"/>
+    <org.eventb.core.variable name="element7" org.eventb.core.identifier="Session_Key"/>
+</org.eventb.core.machineFile>

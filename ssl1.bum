@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.machineFile org.eventb.core.configuration="org.eventb.core.fwd" version="5">
+    <org.eventb.core.refinesMachine name="'" org.eventb.core.target="ssl"/>
+    <org.eventb.core.seesContext name="element1" org.eventb.core.target="ctxt_ssl1"/>
+    <org.eventb.core.variable name="var1" org.eventb.core.identifier="trans"/>
+    <org.eventb.core.variable name="var2" org.eventb.core.identifier="end"/>
+    <org.eventb.core.variable name="var3" org.eventb.core.identifier="t_src"/>
+    <org.eventb.core.variable name="var4" org.eventb.core.identifier="t_dst"/>
+    <org.eventb.core.variable name="var5" org.eventb.core.identifier="t_bld_dst"/>
+    <org.eventb.core.variable name="var6" org.eventb.core.identifier="channel"/>
+    <org.eventb.core.variable name="var7" org.eventb.core.identifier="msg_src"/>
+    <org.eventb.core.variable name="var8" org.eventb.core.identifier="msg_dst"/>
+    <org.eventb.core.variable name="var9" org.eventb.core.identifier="msg_t"/>
+    <org.eventb.core.variable name="element5" org.eventb.core.identifier="Verification"/>
+    <org.eventb.core.variable name="var10" org.eventb.core.identifier="Session_Key"/>
+    <org.eventb.core.event name="element6" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="INITIALISATION">
+        <org.eventb.core.action name="'" org.eventb.core.assignment="certificate ≔ ∅" org.eventb.core.label="act12"/>
+        <org.eventb.core.action name="(" org.eventb.core.assignment="Certificate_Cond ≔ ∅" org.eventb.core.label="act13"/>
+        <org.eventb.core.action name=")" org.eventb.core.assignment="certificate_valid ≔ ∅" org.eventb.core.label="act14"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="element7" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="Client_Say_Hello">
+        <org.eventb.core.refinesEvent name="'" org.eventb.core.target="Client_Say_Hello"/>
+        <org.eventb.core.guard name="(" org.eventb.core.label="grd4" org.eventb.core.predicate="certificate = ∅ ∧ Verification = FALSE"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="element8" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="Server_Say_Hello">
+        <org.eventb.core.refinesEvent name="'" org.eventb.core.target="Server_Say_Hello"/>
+        <org.eventb.core.guard name="(" org.eventb.core.label="grd7" org.eventb.core.predicate="certificate = ∅ ∧ Verification = FALSE"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="element9" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="End_Hello">
+        <org.eventb.core.refinesEvent name="'" org.eventb.core.target="End_Hello"/>
+        <org.eventb.core.parameter name="'" org.eventb.core.identifier="t1"/>
+        <org.eventb.core.parameter name="(" org.eventb.core.identifier="client"/>
+        <org.eventb.core.parameter name=")" org.eventb.core.identifier="server"/>
+        <org.eventb.core.guard name="*" org.eventb.core.label="grd1" org.eventb.core.predicate="t1 ∈ trans ∖ end"/>
+        <org.eventb.core.guard name="+" org.eventb.core.label="grd2" org.eventb.core.predicate="client ∈ Agent ∧ server ∈ Agent ∧ client ≠ server"/>
+        <org.eventb.core.guard name="," org.eventb.core.label="grd3" org.eventb.core.predicate="server_hello ∈ channel"/>
+        <org.eventb.core.guard name="3" org.eventb.core.label="grd4" org.eventb.core.predicate="t_src(t1) = client ∧ t_bld_dst(t1) = server"/>
+        <org.eventb.core.guard name="-" org.eventb.core.label="grd5" org.eventb.core.predicate="msg_dst(server_hello) = client"/>
+        <org.eventb.core.guard name="." org.eventb.core.label="grd6" org.eventb.core.predicate="msg_t(server_hello) = t1"/>
+        <org.eventb.core.action name="6" org.eventb.core.assignment="end ≔ end ∪ {t1}" org.eventb.core.label="act1"/>
+        <org.eventb.core.action name="1" org.eventb.core.assignment="t_dst(t1) ≔ server" org.eventb.core.label="act2"/>
+        <org.eventb.core.parameter name="2" org.eventb.core.identifier="server_hello"/>
+        <org.eventb.core.parameter name="8" org.eventb.core.identifier="cert"/>
+        <org.eventb.core.guard name="9" org.eventb.core.label="grd7" org.eventb.core.predicate="cert ∈ certificate"/>
+        <org.eventb.core.guard name=":" org.eventb.core.label="grd8" org.eventb.core.predicate="certificate_valid(cert) = msg_src(server_hello)"/>
+        <org.eventb.core.guard name=";" org.eventb.core.label="grd9" org.eventb.core.predicate="Certificate_Cond(cert) = TRUE"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="element;" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="Send_Session_Key">
+        <org.eventb.core.refinesEvent name="'" org.eventb.core.target="Send_Session_Key"/>
+        <org.eventb.core.guard name="(" org.eventb.core.label="grd7" org.eventb.core.predicate="Verification = TRUE"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="element=" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="End_Session_Key">
+        <org.eventb.core.refinesEvent name="'" org.eventb.core.target="End_Session_Key"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="element&gt;" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="Client_end">
+        <org.eventb.core.refinesEvent name="'" org.eventb.core.target="Client_end"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="element?" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="Server_end">
+        <org.eventb.core.refinesEvent name="'" org.eventb.core.target="Server_end"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="element@" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="End_Handshake">
+        <org.eventb.core.refinesEvent name="'" org.eventb.core.target="End_Handshake"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="elementA" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="Attacker">
+        <org.eventb.core.refinesEvent name="'" org.eventb.core.target="Attacker"/>
+        <org.eventb.core.guard name="(" org.eventb.core.label="grd5" org.eventb.core.predicate="Attack_Cond = TRUE"/>
+    </org.eventb.core.event>
+    <org.eventb.core.variable name="elementB" org.eventb.core.identifier="certificate"/>
+    <org.eventb.core.invariant name="elementC" org.eventb.core.label="inv13" org.eventb.core.predicate="certificate ⊆ channel"/>
+    <org.eventb.core.variable name="elementD" org.eventb.core.identifier="Certificate_Cond"/>
+    <org.eventb.core.invariant name="elementE" org.eventb.core.label="inv14" org.eventb.core.predicate="Certificate_Cond ∈ certificate → BOOL"/>
+    <org.eventb.core.variable name="elementF" org.eventb.core.identifier="certificate_valid"/>
+    <org.eventb.core.invariant name="elementG" org.eventb.core.label="inv15" org.eventb.core.predicate="certificate_valid ∈ certificate → Agent"/>
+    <org.eventb.core.invariant name="inv1" org.eventb.core.label="inv16" org.eventb.core.predicate="∀t,cert,server,client,msg · t ∈ trans ∧ msg ∈ channel ∧ cert ∈ certificate ∧ server ∈ Agent ∧ client ∈ Agent ∧ server ≠ client ∧ t_src(t) = client ∧ t_bld_dst(t) = server ∧ msg_t(msg) = t ∧ certificate_valid(cert) = msg_src(msg) ∧ Certificate_Cond(cert) = TRUE ⇒ Verification = TRUE ∧ msg_src(msg) = t_bld_dst(t)"/>
+</org.eventb.core.machineFile>

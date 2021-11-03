@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.scContextFile org.eventb.core.accurate="true" org.eventb.core.configuration="org.eventb.core.fwd">
+    <org.eventb.core.scExtendsContext name="'" org.eventb.core.scTarget="/securityDomainModel/ctxt_ssl.bcc|org.eventb.core.scContextFile#ctxt_ssl" org.eventb.core.source="/securityDomainModel/ctxt_ssl1.buc|org.eventb.core.contextFile#ctxt_ssl1|org.eventb.core.extendsContext#'"/>
+    <org.eventb.core.scInternalContext name="ctxt_ssl">
+        <org.eventb.core.scAxiom name="'" org.eventb.core.label="axm1" org.eventb.core.predicate="I∈Agent" org.eventb.core.source="/securityDomainModel/ctxt_ssl.buc|org.eventb.core.contextFile#ctxt_ssl|org.eventb.core.axiom#set5" org.eventb.core.theorem="false"/>
+        <org.eventb.core.scConstant name="I" org.eventb.core.source="/securityDomainModel/ctxt_ssl.buc|org.eventb.core.contextFile#ctxt_ssl|org.eventb.core.constant#set4" org.eventb.core.type="Agent"/>
+        <org.eventb.core.scCarrierSet name="T" org.eventb.core.source="/securityDomainModel/ctxt_ssl.buc|org.eventb.core.contextFile#ctxt_ssl|org.eventb.core.carrierSet#set1" org.eventb.core.type="ℙ(T)"/>
+        <org.eventb.core.scCarrierSet name="Agent" org.eventb.core.source="/securityDomainModel/ctxt_ssl.buc|org.eventb.core.contextFile#ctxt_ssl|org.eventb.core.carrierSet#set2" org.eventb.core.type="ℙ(Agent)"/>
+        <org.eventb.core.scCarrierSet name="MSG" org.eventb.core.source="/securityDomainModel/ctxt_ssl.buc|org.eventb.core.contextFile#ctxt_ssl|org.eventb.core.carrierSet#set3" org.eventb.core.type="ℙ(MSG)"/>
+    </org.eventb.core.scInternalContext>
+    <org.eventb.core.scAxiom name="ctxt_ssm" org.eventb.core.label="axm1" org.eventb.core.predicate="Attack_Cond∈BOOL" org.eventb.core.source="/securityDomainModel/ctxt_ssl1.buc|org.eventb.core.contextFile#ctxt_ssl1|org.eventb.core.axiom#axm1" org.eventb.core.theorem="false"/>
+    <org.eventb.core.scConstant name="Attack_Cond" org.eventb.core.source="/securityDomainModel/ctxt_ssl1.buc|org.eventb.core.contextFile#ctxt_ssl1|org.eventb.core.constant#cst1" org.eventb.core.type="BOOL"/>
+    <org.eventb.core.scCarrierSet name="Key" org.eventb.core.source="/securityDomainModel/ctxt_ssl1.buc|org.eventb.core.contextFile#ctxt_ssl1|org.eventb.core.carrierSet#(" org.eventb.core.type="ℙ(Key)"/>
+</org.eventb.core.scContextFile>

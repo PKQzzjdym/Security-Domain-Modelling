@@ -1,0 +1,454 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.poFile org.eventb.core.poStamp="15">
+    <org.eventb.core.poPredicateSet name="CTXHYP" org.eventb.core.poStamp="3">
+        <org.eventb.core.poIdentifier name="T" org.eventb.core.type="ℙ(T)"/>
+        <org.eventb.core.poIdentifier name="Agent" org.eventb.core.type="ℙ(Agent)"/>
+        <org.eventb.core.poIdentifier name="MSG" org.eventb.core.type="ℙ(MSG)"/>
+        <org.eventb.core.poIdentifier name="I" org.eventb.core.type="Agent"/>
+        <org.eventb.core.poPredicate name="Agenu" org.eventb.core.predicate="I∈Agent" org.eventb.core.source="/securityDomainModel/ctxt_ssl.buc|org.eventb.core.contextFile#ctxt_ssl|org.eventb.core.axiom#set5"/>
+        <org.eventb.core.poIdentifier name="Key" org.eventb.core.type="ℙ(Key)"/>
+        <org.eventb.core.poIdentifier name="Attack_Cond" org.eventb.core.type="BOOL"/>
+        <org.eventb.core.poPredicate name="Attack_Cone" org.eventb.core.predicate="Attack_Cond∈BOOL" org.eventb.core.source="/securityDomainModel/ctxt_ssl1.buc|org.eventb.core.contextFile#ctxt_ssl1|org.eventb.core.axiom#axm1"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.parentSet="/securityDomainModel/ssl1.bpo|org.eventb.core.poFile#ssl1|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="3">
+        <org.eventb.core.poIdentifier name="end" org.eventb.core.type="ℙ(T)"/>
+        <org.eventb.core.poIdentifier name="msg_t" org.eventb.core.type="ℙ(MSG×T)"/>
+        <org.eventb.core.poIdentifier name="channel" org.eventb.core.type="ℙ(MSG)"/>
+        <org.eventb.core.poIdentifier name="t_bld_dst" org.eventb.core.type="ℙ(T×Agent)"/>
+        <org.eventb.core.poIdentifier name="Verification" org.eventb.core.type="BOOL"/>
+        <org.eventb.core.poIdentifier name="Certificate_Cond" org.eventb.core.type="ℙ(MSG×BOOL)"/>
+        <org.eventb.core.poIdentifier name="msg_dst" org.eventb.core.type="ℙ(MSG×Agent)"/>
+        <org.eventb.core.poIdentifier name="msg_src" org.eventb.core.type="ℙ(MSG×Agent)"/>
+        <org.eventb.core.poIdentifier name="trans" org.eventb.core.type="ℙ(T)"/>
+        <org.eventb.core.poIdentifier name="t_src" org.eventb.core.type="ℙ(T×Agent)"/>
+        <org.eventb.core.poIdentifier name="certificate_valid" org.eventb.core.type="ℙ(MSG×Agent)"/>
+        <org.eventb.core.poIdentifier name="certificate" org.eventb.core.type="ℙ(MSG)"/>
+        <org.eventb.core.poIdentifier name="t_dst" org.eventb.core.type="ℙ(T×Agent)"/>
+        <org.eventb.core.poIdentifier name="Session_Key" org.eventb.core.type="BOOL"/>
+        <org.eventb.core.poPredicate name="certificate_valie" org.eventb.core.predicate="trans⊆T" org.eventb.core.source="/securityDomainModel/ssl.bum|org.eventb.core.machineFile#ssl|org.eventb.core.invariant#inv1"/>
+        <org.eventb.core.poPredicate name="certificate_valif" org.eventb.core.predicate="end⊆trans" org.eventb.core.source="/securityDomainModel/ssl.bum|org.eventb.core.machineFile#ssl|org.eventb.core.invariant#inv2"/>
+        <org.eventb.core.poPredicate name="certificate_valig" org.eventb.core.predicate="t_src∈trans → Agent" org.eventb.core.source="/securityDomainModel/ssl.bum|org.eventb.core.machineFile#ssl|org.eventb.core.invariant#inv3"/>
+        <org.eventb.core.poPredicate name="certificate_valih" org.eventb.core.predicate="t_dst∈end → Agent" org.eventb.core.source="/securityDomainModel/ssl.bum|org.eventb.core.machineFile#ssl|org.eventb.core.invariant#inv4"/>
+        <org.eventb.core.poPredicate name="certificate_valii" org.eventb.core.predicate="t_bld_dst∈trans → Agent" org.eventb.core.source="/securityDomainModel/ssl.bum|org.eventb.core.machineFile#ssl|org.eventb.core.invariant#inv5"/>
+        <org.eventb.core.poPredicate name="certificate_valij" org.eventb.core.predicate="channel⊆MSG" org.eventb.core.source="/securityDomainModel/ssl.bum|org.eventb.core.machineFile#ssl|org.eventb.core.invariant#inv6"/>
+        <org.eventb.core.poPredicate name="certificate_valik" org.eventb.core.predicate="msg_src∈channel → Agent" org.eventb.core.source="/securityDomainModel/ssl.bum|org.eventb.core.machineFile#ssl|org.eventb.core.invariant#inv7"/>
+        <org.eventb.core.poPredicate name="certificate_valil" org.eventb.core.predicate="msg_dst∈channel → Agent" org.eventb.core.source="/securityDomainModel/ssl.bum|org.eventb.core.machineFile#ssl|org.eventb.core.invariant#inv8"/>
+        <org.eventb.core.poPredicate name="certificate_valim" org.eventb.core.predicate="msg_t∈channel → T" org.eventb.core.source="/securityDomainModel/ssl.bum|org.eventb.core.machineFile#ssl|org.eventb.core.invariant#inv9"/>
+        <org.eventb.core.poPredicate name="certificate_valin" org.eventb.core.predicate="Verification∈BOOL" org.eventb.core.source="/securityDomainModel/ssl.bum|org.eventb.core.machineFile#ssl|org.eventb.core.invariant#element6"/>
+        <org.eventb.core.poPredicate name="certificate_valio" org.eventb.core.predicate="Session_Key∈BOOL" org.eventb.core.source="/securityDomainModel/ssl.bum|org.eventb.core.machineFile#ssl|org.eventb.core.invariant#element8"/>
+        <org.eventb.core.poPredicate name="certificate_valip" org.eventb.core.predicate="∀t⦂T·t∈end⇒t_dst(t)=t_bld_dst(t)" org.eventb.core.source="/securityDomainModel/ssl.bum|org.eventb.core.machineFile#ssl|org.eventb.core.invariant#inv10"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poSequent name="inv16/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Invariant" org.eventb.core.poStamp="3">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/securityDomainModel/ssl1.bpo|org.eventb.core.poFile#ssl1|org.eventb.core.poPredicateSet#HYPctxt_ssl4"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀t⦂T,cert⦂MSG,server⦂Agent,client⦂Agent,msg⦂MSG·t∈trans∧msg∈channel∧cert∈certificate∧server∈Agent∧client∈Agent∧server≠client⇒t∈dom(t_src)∧t_src∈T ⇸ Agent∧(t_src(t)=client⇒t∈dom(t_bld_dst)∧t_bld_dst∈T ⇸ Agent∧(t_bld_dst(t)=server⇒msg∈dom(msg_t)∧msg_t∈MSG ⇸ T∧(msg_t(msg)=t⇒cert∈dom(certificate_valid)∧certificate_valid∈MSG ⇸ Agent∧msg∈dom(msg_src)∧msg_src∈MSG ⇸ Agent∧(certificate_valid(cert)=msg_src(msg)⇒cert∈dom(Certificate_Cond)∧Certificate_Cond∈MSG ⇸ BOOL))))" org.eventb.core.source="/securityDomainModel/ssl1.bum|org.eventb.core.machineFile#ssl1|org.eventb.core.invariant#inv1"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/securityDomainModel/ssl1.bum|org.eventb.core.machineFile#ssl1|org.eventb.core.invariant#inv1"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/securityDomainModel/ssl1.bpo|org.eventb.core.poFile#ssl1|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poSelHintSnd="/securityDomainModel/ssl1.bpo|org.eventb.core.poFile#ssl1|org.eventb.core.poPredicateSet#HYPctxt_ssl4"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="INITIALISATION/inv13/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="3">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/securityDomainModel/ssl1.bpo|org.eventb.core.poFile#ssl1|org.eventb.core.poPredicateSet#EVTALLHYPcertificate_valie"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(∅ ⦂ ℙ(MSG))⊆(∅ ⦂ ℙ(MSG))" org.eventb.core.source="/securityDomainModel/ssl1.bum|org.eventb.core.machineFile#ssl1|org.eventb.core.invariant#elementC"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/securityDomainModel/ssl.bum|org.eventb.core.machineFile#ssl|org.eventb.core.event#evt1"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/securityDomainModel/ssl1.bum|org.eventb.core.machineFile#ssl1|org.eventb.core.event#element6"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/securityDomainModel/ssl1.bum|org.eventb.core.machineFile#ssl1|org.eventb.core.invariant#elementC"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/securityDomainModel/ssl1.bpo|org.eventb.core.poFile#ssl1|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/securityDomainModel/ssl1.bpo|org.eventb.core.poFile#ssl1|org.eventb.core.poSequent#INITIALISATION\/inv13\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/securityDomainModel/ssl1.bpo|org.eventb.core.poFile#ssl1|org.eventb.core.poPredicateSet#HYPctxt_ssl4|org.eventb.core.poPredicate#PRD0"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="INITIALISATION/inv14/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="3">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/securityDomainModel/ssl1.bpo|org.eventb.core.poFile#ssl1|org.eventb.core.poPredicateSet#EVTALLHYPcertificate_valie"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(∅ ⦂ ℙ(MSG×BOOL))∈(∅ ⦂ ℙ(MSG)) → BOOL" org.eventb.core.source="/securityDomainModel/ssl1.bum|org.eventb.core.machineFile#ssl1|org.eventb.core.invariant#elementE"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/securityDomainModel/ssl.bum|org.eventb.core.machineFile#ssl|org.eventb.core.event#evt1"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/securityDomainModel/ssl1.bum|org.eventb.core.machineFile#ssl1|org.eventb.core.event#element6"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/securityDomainModel/ssl1.bum|org.eventb.core.machineFile#ssl1|org.eventb.core.invariant#elementE"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/securityDomainModel/ssl1.bpo|org.eventb.core.poFile#ssl1|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/securityDomainModel/ssl1.bpo|org.eventb.core.poFile#ssl1|org.eventb.core.poSequent#INITIALISATION\/inv14\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/securityDomainModel/ssl1.bpo|org.eventb.core.poFile#ssl1|org.eventb.core.poPredicateSet#HYPctxt_ssl4|org.eventb.core.poPredicate#PRD1"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="INITIALISATION/inv15/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="3">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/securityDomainModel/ssl1.bpo|org.eventb.core.poFile#ssl1|org.eventb.core.poPredicateSet#EVTALLHYPcertificate_valie"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(∅ ⦂ ℙ(MSG×Agent))∈(∅ ⦂ ℙ(MSG)) → Agent" org.eventb.core.source="/securityDomainModel/ssl1.bum|org.eventb.core.machineFile#ssl1|org.eventb.core.invariant#elementG"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/securityDomainModel/ssl.bum|org.eventb.core.machineFile#ssl|org.eventb.core.event#evt1"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/securityDomainModel/ssl1.bum|org.eventb.core.machineFile#ssl1|org.eventb.core.event#element6"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/securityDomainModel/ssl1.bum|org.eventb.core.machineFile#ssl1|org.eventb.core.invariant#elementG"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/securityDomainModel/ssl1.bpo|org.eventb.core.poFile#ssl1|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/securityDomainModel/ssl1.bpo|org.eventb.core.poFile#ssl1|org.eventb.core.poSequent#INITIALISATION\/inv15\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/securityDomainModel/ssl1.bpo|org.eventb.core.poFile#ssl1|org.eventb.core.poPredicateSet#HYPctxt_ssl4|org.eventb.core.poPredicate#PRD2"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="INITIALISATION/inv16/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="3">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/securityDomainModel/ssl1.bpo|org.eventb.core.poFile#ssl1|org.eventb.core.poPredicateSet#EVTALLHYPcertificate_valie"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀t⦂T,cert⦂MSG,server⦂Agent,client⦂Agent,msg⦂MSG·t∈(∅ ⦂ ℙ(T))∧msg∈(∅ ⦂ ℙ(MSG))∧cert∈(∅ ⦂ ℙ(MSG))∧server∈Agent∧client∈Agent∧server≠client∧(∅ ⦂ ℙ(T×Agent))(t)=client∧(∅ ⦂ ℙ(T×Agent))(t)=server∧(∅ ⦂ ℙ(MSG×T))(msg)=t∧(∅ ⦂ ℙ(MSG×Agent))(cert)=(∅ ⦂ ℙ(MSG×Agent))(msg)∧(∅ ⦂ ℙ(MSG×BOOL))(cert)=TRUE⇒FALSE=TRUE∧(∅ ⦂ ℙ(MSG×Agent))(msg)=(∅ ⦂ ℙ(T×Agent))(t)" org.eventb.core.source="/securityDomainModel/ssl1.bum|org.eventb.core.machineFile#ssl1|org.eventb.core.invariant#inv1"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/securityDomainModel/ssl.bum|org.eventb.core.machineFile#ssl|org.eventb.core.event#evt1"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/securityDomainModel/ssl1.bum|org.eventb.core.machineFile#ssl1|org.eventb.core.event#element6"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/securityDomainModel/ssl1.bum|org.eventb.core.machineFile#ssl1|org.eventb.core.invariant#inv1"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/securityDomainModel/ssl1.bpo|org.eventb.core.poFile#ssl1|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/securityDomainModel/ssl1.bpo|org.eventb.core.poFile#ssl1|org.eventb.core.poSequent#INITIALISATION\/inv16\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/securityDomainModel/ssl1.bpo|org.eventb.core.poFile#ssl1|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD3"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poPredicateSet name="EVTIDENTcertificate_valie" org.eventb.core.parentSet="/securityDomainModel/ssl1.bpo|org.eventb.core.poFile#ssl1|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="3">
+        <org.eventb.core.poIdentifier name="end'" org.eventb.core.type="ℙ(T)"/>
+        <org.eventb.core.poIdentifier name="certificate_valid'" org.eventb.core.type="ℙ(MSG×Agent)"/>
+        <org.eventb.core.poIdentifier name="t_bld_dst'" org.eventb.core.type="ℙ(T×Agent)"/>
+        <org.eventb.core.poIdentifier name="msg_t'" org.eventb.core.type="ℙ(MSG×T)"/>
+        <org.eventb.core.poIdentifier name="msg_dst'" org.eventb.core.type="ℙ(MSG×Agent)"/>
+        <org.eventb.core.poIdentifier name="msg_src'" org.eventb.core.type="ℙ(MSG×Agent)"/>
+        <org.eventb.core.poIdentifier name="Verification'" org.eventb.core.type="BOOL"/>
+        <org.eventb.core.poIdentifier name="t_src'" org.eventb.core.type="ℙ(T×Agent)"/>
+        <org.eventb.core.poIdentifier name="t_dst'" org.eventb.core.type="ℙ(T×Agent)"/>
+        <org.eventb.core.poIdentifier name="channel'" org.eventb.core.type="ℙ(MSG)"/>
+        <org.eventb.core.poIdentifier name="Session_Key'" org.eventb.core.type="BOOL"/>
+        <org.eventb.core.poIdentifier name="certificate'" org.eventb.core.type="ℙ(MSG)"/>
+        <org.eventb.core.poIdentifier name="Certificate_Cond'" org.eventb.core.type="ℙ(MSG×BOOL)"/>
+        <org.eventb.core.poIdentifier name="trans'" org.eventb.core.type="ℙ(T)"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPcertificate_valie" org.eventb.core.parentSet="/securityDomainModel/ssl1.bpo|org.eventb.core.poFile#ssl1|org.eventb.core.poPredicateSet#EVTIDENTcertificate_valie" org.eventb.core.poStamp="3"/>
+    <org.eventb.core.poSequent name="Client_Say_Hello/inv13/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="5">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/securityDomainModel/ssl1.bpo|org.eventb.core.poFile#ssl1|org.eventb.core.poPredicateSet#EVTALLHYPcertificate_valif"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="certificate⊆channel∪{client_hello}" org.eventb.core.source="/securityDomainModel/ssl1.bum|org.eventb.core.machineFile#ssl1|org.eventb.core.invariant#elementC"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/securityDomainModel/ssl.bum|org.eventb.core.machineFile#ssl|org.eventb.core.event#evt2"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/securityDomainModel/ssl1.bum|org.eventb.core.machineFile#ssl1|org.eventb.core.event#element7"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/securityDomainModel/ssl1.bum|org.eventb.core.machineFile#ssl1|org.eventb.core.invariant#elementC"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/securityDomainModel/ssl1.bpo|org.eventb.core.poFile#ssl1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/securityDomainModel/ssl1.bpo|org.eventb.core.poFile#ssl1|org.eventb.core.poSequent#Client_Say_Hello\/inv13\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/securityDomainModel/ssl1.bpo|org.eventb.core.poFile#ssl1|org.eventb.core.poPredicateSet#HYPctxt_ssl4|org.eventb.core.poPredicate#PRD0"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="Client_Say_Hello/inv16/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="5">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/securityDomainModel/ssl1.bpo|org.eventb.core.poFile#ssl1|org.eventb.core.poPredicateSet#EVTALLHYPcertificate_valif"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀t⦂T,cert⦂MSG,server0⦂Agent,client0⦂Agent,msg⦂MSG·t∈trans∪{t1}∧msg∈channel∪{client_hello}∧cert∈certificate∧server0∈Agent∧client0∈Agent∧server0≠client0∧(t_src{t1 ↦ client})(t)=client0∧(t_bld_dst{t1 ↦ server})(t)=server0∧(msg_t{client_hello ↦ t1})(msg)=t∧certificate_valid(cert)=(msg_src{client_hello ↦ client})(msg)∧Certificate_Cond(cert)=TRUE⇒Verification=TRUE∧(msg_src{client_hello ↦ client})(msg)=(t_bld_dst{t1 ↦ server})(t)" org.eventb.core.source="/securityDomainModel/ssl1.bum|org.eventb.core.machineFile#ssl1|org.eventb.core.invariant#inv1"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/securityDomainModel/ssl.bum|org.eventb.core.machineFile#ssl|org.eventb.core.event#evt2"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/securityDomainModel/ssl1.bum|org.eventb.core.machineFile#ssl1|org.eventb.core.event#element7"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/securityDomainModel/ssl1.bum|org.eventb.core.machineFile#ssl1|org.eventb.core.invariant#inv1"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/securityDomainModel/ssl1.bpo|org.eventb.core.poFile#ssl1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/securityDomainModel/ssl1.bpo|org.eventb.core.poFile#ssl1|org.eventb.core.poSequent#Client_Say_Hello\/inv16\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/securityDomainModel/ssl1.bpo|org.eventb.core.poFile#ssl1|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD3"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poPredicateSet name="EVTIDENTcertificate_valif" org.eventb.core.parentSet="/securityDomainModel/ssl1.bpo|org.eventb.core.poFile#ssl1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="3">
+        <org.eventb.core.poIdentifier name="t1" org.eventb.core.type="T"/>
+        <org.eventb.core.poIdentifier name="server" org.eventb.core.type="Agent"/>
+        <org.eventb.core.poIdentifier name="t_bld_dst'" org.eventb.core.type="ℙ(T×Agent)"/>
+        <org.eventb.core.poIdentifier name="msg_t'" org.eventb.core.type="ℙ(MSG×T)"/>
+        <org.eventb.core.poIdentifier name="msg_dst'" org.eventb.core.type="ℙ(MSG×Agent)"/>
+        <org.eventb.core.poIdentifier name="msg_src'" org.eventb.core.type="ℙ(MSG×Agent)"/>
+        <org.eventb.core.poIdentifier name="t_src'" org.eventb.core.type="ℙ(T×Agent)"/>
+        <org.eventb.core.poIdentifier name="channel'" org.eventb.core.type="ℙ(MSG)"/>
+        <org.eventb.core.poIdentifier name="client_hello" org.eventb.core.type="MSG"/>
+        <org.eventb.core.poIdentifier name="trans'" org.eventb.core.type="ℙ(T)"/>
+        <org.eventb.core.poIdentifier name="client" org.eventb.core.type="Agent"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPcertificate_valif" org.eventb.core.parentSet="/securityDomainModel/ssl1.bpo|org.eventb.core.poFile#ssl1|org.eventb.core.poPredicateSet#EVTIDENTcertificate_valif" org.eventb.core.poStamp="5">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="t1∈T ∖ trans" org.eventb.core.source="/securityDomainModel/ssl.bum|org.eventb.core.machineFile#ssl|org.eventb.core.event#evt2|org.eventb.core.guard#)"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="client∈Agent∧server∈Agent∧client≠server" org.eventb.core.source="/securityDomainModel/ssl.bum|org.eventb.core.machineFile#ssl|org.eventb.core.event#evt2|org.eventb.core.guard#0"/>
+        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="client_hello∈MSG ∖ channel" org.eventb.core.source="/securityDomainModel/ssl.bum|org.eventb.core.machineFile#ssl|org.eventb.core.event#evt2|org.eventb.core.guard#*"/>
+        <org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="certificate=(∅ ⦂ ℙ(MSG))∧Verification=FALSE" org.eventb.core.source="/securityDomainModel/ssl1.bum|org.eventb.core.machineFile#ssl1|org.eventb.core.event#element7|org.eventb.core.guard#("/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poSequent name="Server_Say_Hello/inv13/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="6">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/securityDomainModel/ssl1.bpo|org.eventb.core.poFile#ssl1|org.eventb.core.poPredicateSet#EVTALLHYPcertificate_valig"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="certificate⊆channel∪{server_hello}" org.eventb.core.source="/securityDomainModel/ssl1.bum|org.eventb.core.machineFile#ssl1|org.eventb.core.invariant#elementC"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/securityDomainModel/ssl.bum|org.eventb.core.machineFile#ssl|org.eventb.core.event#evt3"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/securityDomainModel/ssl1.bum|org.eventb.core.machineFile#ssl1|org.eventb.core.event#element8"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/securityDomainModel/ssl1.bum|org.eventb.core.machineFile#ssl1|org.eventb.core.invariant#elementC"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/securityDomainModel/ssl1.bpo|org.eventb.core.poFile#ssl1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/securityDomainModel/ssl1.bpo|org.eventb.core.poFile#ssl1|org.eventb.core.poSequent#Server_Say_Hello\/inv13\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/securityDomainModel/ssl1.bpo|org.eventb.core.poFile#ssl1|org.eventb.core.poPredicateSet#HYPctxt_ssl4|org.eventb.core.poPredicate#PRD0"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="Server_Say_Hello/inv16/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="6">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/securityDomainModel/ssl1.bpo|org.eventb.core.poFile#ssl1|org.eventb.core.poPredicateSet#EVTALLHYPcertificate_valig"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀t⦂T,cert⦂MSG,server0⦂Agent,client⦂Agent,msg⦂MSG·t∈trans∧msg∈channel∪{server_hello}∧cert∈certificate∧server0∈Agent∧client∈Agent∧server0≠client∧t_src(t)=client∧t_bld_dst(t)=server0∧(msg_t{server_hello ↦ t1})(msg)=t∧certificate_valid(cert)=(msg_src{server_hello ↦ server})(msg)∧Certificate_Cond(cert)=TRUE⇒Verification=TRUE∧(msg_src{server_hello ↦ server})(msg)=t_bld_dst(t)" org.eventb.core.source="/securityDomainModel/ssl1.bum|org.eventb.core.machineFile#ssl1|org.eventb.core.invariant#inv1"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/securityDomainModel/ssl.bum|org.eventb.core.machineFile#ssl|org.eventb.core.event#evt3"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/securityDomainModel/ssl1.bum|org.eventb.core.machineFile#ssl1|org.eventb.core.event#element8"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/securityDomainModel/ssl1.bum|org.eventb.core.machineFile#ssl1|org.eventb.core.invariant#inv1"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/securityDomainModel/ssl1.bpo|org.eventb.core.poFile#ssl1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/securityDomainModel/ssl1.bpo|org.eventb.core.poFile#ssl1|org.eventb.core.poSequent#Server_Say_Hello\/inv16\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/securityDomainModel/ssl1.bpo|org.eventb.core.poFile#ssl1|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD3"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poPredicateSet name="EVTIDENTcertificate_valig" org.eventb.core.parentSet="/securityDomainModel/ssl1.bpo|org.eventb.core.poFile#ssl1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="3">
+        <org.eventb.core.poIdentifier name="t1" org.eventb.core.type="T"/>
+        <org.eventb.core.poIdentifier name="server" org.eventb.core.type="Agent"/>
+        <org.eventb.core.poIdentifier name="msg_t'" org.eventb.core.type="ℙ(MSG×T)"/>
+        <org.eventb.core.poIdentifier name="msg_dst'" org.eventb.core.type="ℙ(MSG×Agent)"/>
+        <org.eventb.core.poIdentifier name="msg_src'" org.eventb.core.type="ℙ(MSG×Agent)"/>
+        <org.eventb.core.poIdentifier name="channel'" org.eventb.core.type="ℙ(MSG)"/>
+        <org.eventb.core.poIdentifier name="client_hello" org.eventb.core.type="MSG"/>
+        <org.eventb.core.poIdentifier name="client" org.eventb.core.type="Agent"/>
+        <org.eventb.core.poIdentifier name="server_hello" org.eventb.core.type="MSG"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPcertificate_valig" org.eventb.core.parentSet="/securityDomainModel/ssl1.bpo|org.eventb.core.poFile#ssl1|org.eventb.core.poPredicateSet#EVTIDENTcertificate_valig" org.eventb.core.poStamp="6">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="t1∈trans" org.eventb.core.source="/securityDomainModel/ssl.bum|org.eventb.core.machineFile#ssl|org.eventb.core.event#evt3|org.eventb.core.guard#*"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="client∈Agent∧server∈Agent∧client≠server" org.eventb.core.source="/securityDomainModel/ssl.bum|org.eventb.core.machineFile#ssl|org.eventb.core.event#evt3|org.eventb.core.guard#+"/>
+        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="server_hello∈MSG ∖ channel" org.eventb.core.source="/securityDomainModel/ssl.bum|org.eventb.core.machineFile#ssl|org.eventb.core.event#evt3|org.eventb.core.guard#,"/>
+        <org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="client_hello∈channel" org.eventb.core.source="/securityDomainModel/ssl.bum|org.eventb.core.machineFile#ssl|org.eventb.core.event#evt3|org.eventb.core.guard#-"/>
+        <org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="msg_src(client_hello)=client∧msg_dst(client_hello)=server∧msg_t(client_hello)=t1" org.eventb.core.source="/securityDomainModel/ssl.bum|org.eventb.core.machineFile#ssl|org.eventb.core.event#evt3|org.eventb.core.guard#5"/>
+        <org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="t_bld_dst(t1)=server" org.eventb.core.source="/securityDomainModel/ssl.bum|org.eventb.core.machineFile#ssl|org.eventb.core.event#evt3|org.eventb.core.guard#6"/>
+        <org.eventb.core.poPredicate name="PRD6" org.eventb.core.predicate="certificate=(∅ ⦂ ℙ(MSG))∧Verification=FALSE" org.eventb.core.source="/securityDomainModel/ssl1.bum|org.eventb.core.machineFile#ssl1|org.eventb.core.event#element8|org.eventb.core.guard#("/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poSequent name="End_Hello/grd4/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="10">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/securityDomainModel/ssl1.bpo|org.eventb.core.poFile#ssl1|org.eventb.core.poPredicateSet#EVTHYPcertificate_valih*"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="t1∈dom(t_src)∧t_src∈T ⇸ Agent∧(t_src(t1)=client⇒t1∈dom(t_bld_dst)∧t_bld_dst∈T ⇸ Agent)" org.eventb.core.source="/securityDomainModel/ssl1.bum|org.eventb.core.machineFile#ssl1|org.eventb.core.event#element9|org.eventb.core.guard#3"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/securityDomainModel/ssl1.bum|org.eventb.core.machineFile#ssl1|org.eventb.core.event#element9|org.eventb.core.guard#3"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/securityDomainModel/ssl1.bpo|org.eventb.core.poFile#ssl1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/securityDomainModel/ssl1.bpo|org.eventb.core.poFile#ssl1|org.eventb.core.poPredicateSet#EVTHYPcertificate_valih*"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="End_Hello/grd5/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="11">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/securityDomainModel/ssl1.bpo|org.eventb.core.poFile#ssl1|org.eventb.core.poPredicateSet#EVTHYPcertificate_valih+"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="server_hello∈dom(msg_dst)∧msg_dst∈MSG ⇸ Agent" org.eventb.core.source="/securityDomainModel/ssl1.bum|org.eventb.core.machineFile#ssl1|org.eventb.core.event#element9|org.eventb.core.guard#-"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/securityDomainModel/ssl1.bum|org.eventb.core.machineFile#ssl1|org.eventb.core.event#element9|org.eventb.core.guard#-"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/securityDomainModel/ssl1.bpo|org.eventb.core.poFile#ssl1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/securityDomainModel/ssl1.bpo|org.eventb.core.poFile#ssl1|org.eventb.core.poPredicateSet#EVTHYPcertificate_valih+"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="End_Hello/grd6/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="11">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/securityDomainModel/ssl1.bpo|org.eventb.core.poFile#ssl1|org.eventb.core.poPredicateSet#EVTHYPcertificate_valih,"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="server_hello∈dom(msg_t)∧msg_t∈MSG ⇸ T" org.eventb.core.source="/securityDomainModel/ssl1.bum|org.eventb.core.machineFile#ssl1|org.eventb.core.event#element9|org.eventb.core.guard#."/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/securityDomainModel/ssl1.bum|org.eventb.core.machineFile#ssl1|org.eventb.core.event#element9|org.eventb.core.guard#."/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/securityDomainModel/ssl1.bpo|org.eventb.core.poFile#ssl1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/securityDomainModel/ssl1.bpo|org.eventb.core.poFile#ssl1|org.eventb.core.poPredicateSet#EVTHYPcertificate_valih,"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="End_Hello/grd8/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="11">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/securityDomainModel/ssl1.bpo|org.eventb.core.poFile#ssl1|org.eventb.core.poPredicateSet#EVTHYPcertificate_valih."/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="cert∈dom(certificate_valid)∧certificate_valid∈MSG ⇸ Agent∧server_hello∈dom(msg_src)∧msg_src∈MSG ⇸ Agent" org.eventb.core.source="/securityDomainModel/ssl1.bum|org.eventb.core.machineFile#ssl1|org.eventb.core.event#element9|org.eventb.core.guard#:"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/securityDomainModel/ssl1.bum|org.eventb.core.machineFile#ssl1|org.eventb.core.event#element9|org.eventb.core.guard#:"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/securityDomainModel/ssl1.bpo|org.eventb.core.poFile#ssl1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/securityDomainModel/ssl1.bpo|org.eventb.core.poFile#ssl1|org.eventb.core.poPredicateSet#EVTHYPcertificate_valih."/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="End_Hello/grd9/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="11">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/securityDomainModel/ssl1.bpo|org.eventb.core.poFile#ssl1|org.eventb.core.poPredicateSet#EVTHYPcertificate_valih\/"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="cert∈dom(Certificate_Cond)∧Certificate_Cond∈MSG ⇸ BOOL" org.eventb.core.source="/securityDomainModel/ssl1.bum|org.eventb.core.machineFile#ssl1|org.eventb.core.event#element9|org.eventb.core.guard#;"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/securityDomainModel/ssl1.bum|org.eventb.core.machineFile#ssl1|org.eventb.core.event#element9|org.eventb.core.guard#;"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/securityDomainModel/ssl1.bpo|org.eventb.core.poFile#ssl1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/securityDomainModel/ssl1.bpo|org.eventb.core.poFile#ssl1|org.eventb.core.poPredicateSet#EVTHYPcertificate_valih\/"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="End_Hello/grd4/GRD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Guard strengthening (split)" org.eventb.core.poStamp="11">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/securityDomainModel/ssl1.bpo|org.eventb.core.poFile#ssl1|org.eventb.core.poPredicateSet#EVTALLHYPcertificate_valih"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="t_src(t1)=client" org.eventb.core.source="/securityDomainModel/ssl.bum|org.eventb.core.machineFile#ssl|org.eventb.core.event#evt4|org.eventb.core.guard#3"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/securityDomainModel/ssl.bum|org.eventb.core.machineFile#ssl|org.eventb.core.event#evt4"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/securityDomainModel/ssl.bum|org.eventb.core.machineFile#ssl|org.eventb.core.event#evt4|org.eventb.core.guard#3"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/securityDomainModel/ssl1.bum|org.eventb.core.machineFile#ssl1|org.eventb.core.event#element9"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/securityDomainModel/ssl1.bpo|org.eventb.core.poFile#ssl1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/securityDomainModel/ssl1.bpo|org.eventb.core.poFile#ssl1|org.eventb.core.poSequent#End_Hello\/grd4\/GRD|org.eventb.core.poPredicateSet#SEQHYP"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="End_Hello/grd7/GRD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Guard strengthening (split)" org.eventb.core.poStamp="11">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/securityDomainModel/ssl1.bpo|org.eventb.core.poFile#ssl1|org.eventb.core.poPredicateSet#EVTALLHYPcertificate_valih"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="msg_src(server_hello)=server" org.eventb.core.source="/securityDomainModel/ssl.bum|org.eventb.core.machineFile#ssl|org.eventb.core.event#evt4|org.eventb.core.guard#\/"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/securityDomainModel/ssl.bum|org.eventb.core.machineFile#ssl|org.eventb.core.event#evt4"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/securityDomainModel/ssl.bum|org.eventb.core.machineFile#ssl|org.eventb.core.event#evt4|org.eventb.core.guard#\/"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/securityDomainModel/ssl1.bum|org.eventb.core.machineFile#ssl1|org.eventb.core.event#element9"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/securityDomainModel/ssl1.bpo|org.eventb.core.poFile#ssl1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/securityDomainModel/ssl1.bpo|org.eventb.core.poFile#ssl1|org.eventb.core.poSequent#End_Hello\/grd7\/GRD|org.eventb.core.poPredicateSet#SEQHYP"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="End_Hello/grd8/GRD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Guard strengthening (split)" org.eventb.core.poStamp="11">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/securityDomainModel/ssl1.bpo|org.eventb.core.poFile#ssl1|org.eventb.core.poPredicateSet#EVTALLHYPcertificate_valih"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="msg_src(server_hello)=t_bld_dst(t1)" org.eventb.core.source="/securityDomainModel/ssl.bum|org.eventb.core.machineFile#ssl|org.eventb.core.event#evt4|org.eventb.core.guard#4"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/securityDomainModel/ssl.bum|org.eventb.core.machineFile#ssl|org.eventb.core.event#evt4"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/securityDomainModel/ssl.bum|org.eventb.core.machineFile#ssl|org.eventb.core.event#evt4|org.eventb.core.guard#4"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/securityDomainModel/ssl1.bum|org.eventb.core.machineFile#ssl1|org.eventb.core.event#element9"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/securityDomainModel/ssl1.bpo|org.eventb.core.poFile#ssl1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/securityDomainModel/ssl1.bpo|org.eventb.core.poFile#ssl1|org.eventb.core.poSequent#End_Hello\/grd8\/GRD|org.eventb.core.poPredicateSet#SEQHYP"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="End_Hello/grd9/GRD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Guard strengthening (split)" org.eventb.core.poStamp="11">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/securityDomainModel/ssl1.bpo|org.eventb.core.poFile#ssl1|org.eventb.core.poPredicateSet#EVTALLHYPcertificate_valih"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="Verification=TRUE" org.eventb.core.source="/securityDomainModel/ssl.bum|org.eventb.core.machineFile#ssl|org.eventb.core.event#evt4|org.eventb.core.guard#7"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/securityDomainModel/ssl.bum|org.eventb.core.machineFile#ssl|org.eventb.core.event#evt4"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/securityDomainModel/ssl.bum|org.eventb.core.machineFile#ssl|org.eventb.core.event#evt4|org.eventb.core.guard#7"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/securityDomainModel/ssl1.bum|org.eventb.core.machineFile#ssl1|org.eventb.core.event#element9"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/securityDomainModel/ssl1.bpo|org.eventb.core.poFile#ssl1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/securityDomainModel/ssl1.bpo|org.eventb.core.poFile#ssl1|org.eventb.core.poSequent#End_Hello\/grd9\/GRD|org.eventb.core.poPredicateSet#SEQHYP"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poPredicateSet name="EVTIDENTcertificate_valih" org.eventb.core.parentSet="/securityDomainModel/ssl1.bpo|org.eventb.core.poFile#ssl1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="3">
+        <org.eventb.core.poIdentifier name="end'" org.eventb.core.type="ℙ(T)"/>
+        <org.eventb.core.poIdentifier name="t1" org.eventb.core.type="T"/>
+        <org.eventb.core.poIdentifier name="server" org.eventb.core.type="Agent"/>
+        <org.eventb.core.poIdentifier name="t_dst'" org.eventb.core.type="ℙ(T×Agent)"/>
+        <org.eventb.core.poIdentifier name="cert" org.eventb.core.type="MSG"/>
+        <org.eventb.core.poIdentifier name="client" org.eventb.core.type="Agent"/>
+        <org.eventb.core.poIdentifier name="server_hello" org.eventb.core.type="MSG"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTHYPcertificate_valih*" org.eventb.core.parentSet="/securityDomainModel/ssl1.bpo|org.eventb.core.poFile#ssl1|org.eventb.core.poPredicateSet#EVTIDENTcertificate_valih" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="t1∈trans ∖ end" org.eventb.core.source="/securityDomainModel/ssl1.bum|org.eventb.core.machineFile#ssl1|org.eventb.core.event#element9|org.eventb.core.guard#*"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="client∈Agent∧server∈Agent∧client≠server" org.eventb.core.source="/securityDomainModel/ssl1.bum|org.eventb.core.machineFile#ssl1|org.eventb.core.event#element9|org.eventb.core.guard#+"/>
+        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="server_hello∈channel" org.eventb.core.source="/securityDomainModel/ssl1.bum|org.eventb.core.machineFile#ssl1|org.eventb.core.event#element9|org.eventb.core.guard#,"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTHYPcertificate_valih+" org.eventb.core.parentSet="/securityDomainModel/ssl1.bpo|org.eventb.core.poFile#ssl1|org.eventb.core.poPredicateSet#EVTHYPcertificate_valih*" org.eventb.core.poStamp="10">
+        <org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="t_src(t1)=client∧t_bld_dst(t1)=server" org.eventb.core.source="/securityDomainModel/ssl1.bum|org.eventb.core.machineFile#ssl1|org.eventb.core.event#element9|org.eventb.core.guard#3"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTHYPcertificate_valih," org.eventb.core.parentSet="/securityDomainModel/ssl1.bpo|org.eventb.core.poFile#ssl1|org.eventb.core.poPredicateSet#EVTHYPcertificate_valih+" org.eventb.core.poStamp="11">
+        <org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="msg_dst(server_hello)=client" org.eventb.core.source="/securityDomainModel/ssl1.bum|org.eventb.core.machineFile#ssl1|org.eventb.core.event#element9|org.eventb.core.guard#-"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTHYPcertificate_valih." org.eventb.core.parentSet="/securityDomainModel/ssl1.bpo|org.eventb.core.poFile#ssl1|org.eventb.core.poPredicateSet#EVTHYPcertificate_valih," org.eventb.core.poStamp="11">
+        <org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="msg_t(server_hello)=t1" org.eventb.core.source="/securityDomainModel/ssl1.bum|org.eventb.core.machineFile#ssl1|org.eventb.core.event#element9|org.eventb.core.guard#."/>
+        <org.eventb.core.poPredicate name="PRD6" org.eventb.core.predicate="cert∈certificate" org.eventb.core.source="/securityDomainModel/ssl1.bum|org.eventb.core.machineFile#ssl1|org.eventb.core.event#element9|org.eventb.core.guard#9"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTHYPcertificate_valih/" org.eventb.core.parentSet="/securityDomainModel/ssl1.bpo|org.eventb.core.poFile#ssl1|org.eventb.core.poPredicateSet#EVTHYPcertificate_valih." org.eventb.core.poStamp="11">
+        <org.eventb.core.poPredicate name="PRD7" org.eventb.core.predicate="certificate_valid(cert)=msg_src(server_hello)" org.eventb.core.source="/securityDomainModel/ssl1.bum|org.eventb.core.machineFile#ssl1|org.eventb.core.event#element9|org.eventb.core.guard#:"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPcertificate_valih" org.eventb.core.parentSet="/securityDomainModel/ssl1.bpo|org.eventb.core.poFile#ssl1|org.eventb.core.poPredicateSet#EVTHYPcertificate_valih\/" org.eventb.core.poStamp="11">
+        <org.eventb.core.poPredicate name="PRD8" org.eventb.core.predicate="Certificate_Cond(cert)=TRUE" org.eventb.core.source="/securityDomainModel/ssl1.bum|org.eventb.core.machineFile#ssl1|org.eventb.core.event#element9|org.eventb.core.guard#;"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poSequent name="Send_Session_Key/inv13/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="3">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/securityDomainModel/ssl1.bpo|org.eventb.core.poFile#ssl1|org.eventb.core.poPredicateSet#EVTALLHYPcertificate_valii"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="certificate⊆channel∪{msg}" org.eventb.core.source="/securityDomainModel/ssl1.bum|org.eventb.core.machineFile#ssl1|org.eventb.core.invariant#elementC"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/securityDomainModel/ssl.bum|org.eventb.core.machineFile#ssl|org.eventb.core.event#evt6"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/securityDomainModel/ssl1.bum|org.eventb.core.machineFile#ssl1|org.eventb.core.event#element;"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/securityDomainModel/ssl1.bum|org.eventb.core.machineFile#ssl1|org.eventb.core.invariant#elementC"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/securityDomainModel/ssl1.bpo|org.eventb.core.poFile#ssl1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/securityDomainModel/ssl1.bpo|org.eventb.core.poFile#ssl1|org.eventb.core.poSequent#Send_Session_Key\/inv13\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/securityDomainModel/ssl1.bpo|org.eventb.core.poFile#ssl1|org.eventb.core.poPredicateSet#HYPctxt_ssl4|org.eventb.core.poPredicate#PRD0"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="Send_Session_Key/inv16/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="3">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/securityDomainModel/ssl1.bpo|org.eventb.core.poFile#ssl1|org.eventb.core.poPredicateSet#EVTALLHYPcertificate_valii"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀t0⦂T,cert⦂MSG,server⦂Agent,client0⦂Agent,msg0⦂MSG·t0∈trans∧msg0∈channel∪{msg}∧cert∈certificate∧server∈Agent∧client0∈Agent∧server≠client0∧t_src(t0)=client0∧t_bld_dst(t0)=server∧(msg_t{msg ↦ t})(msg0)=t0∧certificate_valid(cert)=(msg_src{msg ↦ client})(msg0)∧Certificate_Cond(cert)=TRUE⇒Verification=TRUE∧(msg_src{msg ↦ client})(msg0)=t_bld_dst(t0)" org.eventb.core.source="/securityDomainModel/ssl1.bum|org.eventb.core.machineFile#ssl1|org.eventb.core.invariant#inv1"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/securityDomainModel/ssl.bum|org.eventb.core.machineFile#ssl|org.eventb.core.event#evt6"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/securityDomainModel/ssl1.bum|org.eventb.core.machineFile#ssl1|org.eventb.core.event#element;"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/securityDomainModel/ssl1.bum|org.eventb.core.machineFile#ssl1|org.eventb.core.invariant#inv1"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/securityDomainModel/ssl1.bpo|org.eventb.core.poFile#ssl1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/securityDomainModel/ssl1.bpo|org.eventb.core.poFile#ssl1|org.eventb.core.poSequent#Send_Session_Key\/inv16\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/securityDomainModel/ssl1.bpo|org.eventb.core.poFile#ssl1|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD3"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poPredicateSet name="EVTIDENTcertificate_valii" org.eventb.core.parentSet="/securityDomainModel/ssl1.bpo|org.eventb.core.poFile#ssl1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="3">
+        <org.eventb.core.poIdentifier name="msg" org.eventb.core.type="MSG"/>
+        <org.eventb.core.poIdentifier name="server" org.eventb.core.type="Agent"/>
+        <org.eventb.core.poIdentifier name="msg_t'" org.eventb.core.type="ℙ(MSG×T)"/>
+        <org.eventb.core.poIdentifier name="msg_dst'" org.eventb.core.type="ℙ(MSG×Agent)"/>
+        <org.eventb.core.poIdentifier name="msg_src'" org.eventb.core.type="ℙ(MSG×Agent)"/>
+        <org.eventb.core.poIdentifier name="channel'" org.eventb.core.type="ℙ(MSG)"/>
+        <org.eventb.core.poIdentifier name="t" org.eventb.core.type="T"/>
+        <org.eventb.core.poIdentifier name="client" org.eventb.core.type="Agent"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPcertificate_valii" org.eventb.core.parentSet="/securityDomainModel/ssl1.bpo|org.eventb.core.poFile#ssl1|org.eventb.core.poPredicateSet#EVTIDENTcertificate_valii" org.eventb.core.poStamp="3">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="t∈trans ∖ end" org.eventb.core.source="/securityDomainModel/ssl.bum|org.eventb.core.machineFile#ssl|org.eventb.core.event#evt6|org.eventb.core.guard#*"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="client∈Agent∧server∈Agent∧client≠server" org.eventb.core.source="/securityDomainModel/ssl.bum|org.eventb.core.machineFile#ssl|org.eventb.core.event#evt6|org.eventb.core.guard#+"/>
+        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="t_src(t)=client" org.eventb.core.source="/securityDomainModel/ssl.bum|org.eventb.core.machineFile#ssl|org.eventb.core.event#evt6|org.eventb.core.guard#5"/>
+        <org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="t_bld_dst(t)=server" org.eventb.core.source="/securityDomainModel/ssl.bum|org.eventb.core.machineFile#ssl|org.eventb.core.event#evt6|org.eventb.core.guard#6"/>
+        <org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="msg∈MSG ∖ channel" org.eventb.core.source="/securityDomainModel/ssl.bum|org.eventb.core.machineFile#ssl|org.eventb.core.event#evt6|org.eventb.core.guard#,"/>
+        <org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="Session_Key=FALSE" org.eventb.core.source="/securityDomainModel/ssl.bum|org.eventb.core.machineFile#ssl|org.eventb.core.event#evt6|org.eventb.core.guard#4"/>
+        <org.eventb.core.poPredicate name="PRD6" org.eventb.core.predicate="Verification=TRUE" org.eventb.core.source="/securityDomainModel/ssl1.bum|org.eventb.core.machineFile#ssl1|org.eventb.core.event#element;|org.eventb.core.guard#("/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTIDENTcertificate_valij" org.eventb.core.parentSet="/securityDomainModel/ssl1.bpo|org.eventb.core.poFile#ssl1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="3">
+        <org.eventb.core.poIdentifier name="msg" org.eventb.core.type="MSG"/>
+        <org.eventb.core.poIdentifier name="server" org.eventb.core.type="Agent"/>
+        <org.eventb.core.poIdentifier name="Session_Key'" org.eventb.core.type="BOOL"/>
+        <org.eventb.core.poIdentifier name="t" org.eventb.core.type="T"/>
+        <org.eventb.core.poIdentifier name="client" org.eventb.core.type="Agent"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPcertificate_valij" org.eventb.core.parentSet="/securityDomainModel/ssl1.bpo|org.eventb.core.poFile#ssl1|org.eventb.core.poPredicateSet#EVTIDENTcertificate_valij" org.eventb.core.poStamp="8">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="t∈trans ∖ end" org.eventb.core.source="/securityDomainModel/ssl.bum|org.eventb.core.machineFile#ssl|org.eventb.core.event#evt7|org.eventb.core.guard#*"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="client∈Agent∧server∈Agent∧client≠server" org.eventb.core.source="/securityDomainModel/ssl.bum|org.eventb.core.machineFile#ssl|org.eventb.core.event#evt7|org.eventb.core.guard#+"/>
+        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="msg∈channel" org.eventb.core.source="/securityDomainModel/ssl.bum|org.eventb.core.machineFile#ssl|org.eventb.core.event#evt7|org.eventb.core.guard#-"/>
+        <org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="msg_t(msg)=t" org.eventb.core.source="/securityDomainModel/ssl.bum|org.eventb.core.machineFile#ssl|org.eventb.core.event#evt7|org.eventb.core.guard#."/>
+        <org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="msg_src(msg)=client" org.eventb.core.source="/securityDomainModel/ssl.bum|org.eventb.core.machineFile#ssl|org.eventb.core.event#evt7|org.eventb.core.guard#grd1"/>
+        <org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="msg_dst(msg)=server" org.eventb.core.source="/securityDomainModel/ssl.bum|org.eventb.core.machineFile#ssl|org.eventb.core.event#evt7|org.eventb.core.guard#grd2"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poSequent name="Client_end/inv13/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="14">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/securityDomainModel/ssl1.bpo|org.eventb.core.poFile#ssl1|org.eventb.core.poPredicateSet#EVTALLHYPcertificate_valik"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="certificate⊆channel∪{client_end}" org.eventb.core.source="/securityDomainModel/ssl1.bum|org.eventb.core.machineFile#ssl1|org.eventb.core.invariant#elementC"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/securityDomainModel/ssl.bum|org.eventb.core.machineFile#ssl|org.eventb.core.event#element2"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/securityDomainModel/ssl1.bum|org.eventb.core.machineFile#ssl1|org.eventb.core.event#element&gt;"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/securityDomainModel/ssl1.bum|org.eventb.core.machineFile#ssl1|org.eventb.core.invariant#elementC"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/securityDomainModel/ssl1.bpo|org.eventb.core.poFile#ssl1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/securityDomainModel/ssl1.bpo|org.eventb.core.poFile#ssl1|org.eventb.core.poSequent#Client_end\/inv13\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/securityDomainModel/ssl1.bpo|org.eventb.core.poFile#ssl1|org.eventb.core.poPredicateSet#HYPctxt_ssl4|org.eventb.core.poPredicate#PRD0"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="Client_end/inv16/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="14">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/securityDomainModel/ssl1.bpo|org.eventb.core.poFile#ssl1|org.eventb.core.poPredicateSet#EVTALLHYPcertificate_valik"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀t⦂T,cert⦂MSG,server0⦂Agent,client0⦂Agent,msg⦂MSG·t∈trans∪{t3}∧msg∈channel∪{client_end}∧cert∈certificate∧server0∈Agent∧client0∈Agent∧server0≠client0∧(t_src{t3 ↦ client})(t)=client0∧(t_bld_dst{t3 ↦ server})(t)=server0∧(msg_t{client_end ↦ t3})(msg)=t∧certificate_valid(cert)=(msg_src{client_end ↦ client})(msg)∧Certificate_Cond(cert)=TRUE⇒Verification=TRUE∧(msg_src{client_end ↦ client})(msg)=(t_bld_dst{t3 ↦ server})(t)" org.eventb.core.source="/securityDomainModel/ssl1.bum|org.eventb.core.machineFile#ssl1|org.eventb.core.invariant#inv1"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/securityDomainModel/ssl.bum|org.eventb.core.machineFile#ssl|org.eventb.core.event#element2"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/securityDomainModel/ssl1.bum|org.eventb.core.machineFile#ssl1|org.eventb.core.event#element&gt;"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/securityDomainModel/ssl1.bum|org.eventb.core.machineFile#ssl1|org.eventb.core.invariant#inv1"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/securityDomainModel/ssl1.bpo|org.eventb.core.poFile#ssl1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/securityDomainModel/ssl1.bpo|org.eventb.core.poFile#ssl1|org.eventb.core.poSequent#Client_end\/inv16\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/securityDomainModel/ssl1.bpo|org.eventb.core.poFile#ssl1|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD3"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poPredicateSet name="EVTIDENTcertificate_valik" org.eventb.core.parentSet="/securityDomainModel/ssl1.bpo|org.eventb.core.poFile#ssl1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="3">
+        <org.eventb.core.poIdentifier name="server" org.eventb.core.type="Agent"/>
+        <org.eventb.core.poIdentifier name="t_bld_dst'" org.eventb.core.type="ℙ(T×Agent)"/>
+        <org.eventb.core.poIdentifier name="msg_t'" org.eventb.core.type="ℙ(MSG×T)"/>
+        <org.eventb.core.poIdentifier name="msg_dst'" org.eventb.core.type="ℙ(MSG×Agent)"/>
+        <org.eventb.core.poIdentifier name="msg_src'" org.eventb.core.type="ℙ(MSG×Agent)"/>
+        <org.eventb.core.poIdentifier name="t_src'" org.eventb.core.type="ℙ(T×Agent)"/>
+        <org.eventb.core.poIdentifier name="channel'" org.eventb.core.type="ℙ(MSG)"/>
+        <org.eventb.core.poIdentifier name="t3" org.eventb.core.type="T"/>
+        <org.eventb.core.poIdentifier name="trans'" org.eventb.core.type="ℙ(T)"/>
+        <org.eventb.core.poIdentifier name="client" org.eventb.core.type="Agent"/>
+        <org.eventb.core.poIdentifier name="client_end" org.eventb.core.type="MSG"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPcertificate_valik" org.eventb.core.parentSet="/securityDomainModel/ssl1.bpo|org.eventb.core.poFile#ssl1|org.eventb.core.poPredicateSet#EVTIDENTcertificate_valik" org.eventb.core.poStamp="14">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="t3∈T ∖ trans" org.eventb.core.source="/securityDomainModel/ssl.bum|org.eventb.core.machineFile#ssl|org.eventb.core.event#element2|org.eventb.core.guard#*"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="client∈Agent∧server∈Agent∧client≠server" org.eventb.core.source="/securityDomainModel/ssl.bum|org.eventb.core.machineFile#ssl|org.eventb.core.event#element2|org.eventb.core.guard#+"/>
+        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="client_end∈MSG ∖ channel" org.eventb.core.source="/securityDomainModel/ssl.bum|org.eventb.core.machineFile#ssl|org.eventb.core.event#element2|org.eventb.core.guard#."/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poSequent name="Server_end/inv13/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="3">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/securityDomainModel/ssl1.bpo|org.eventb.core.poFile#ssl1|org.eventb.core.poPredicateSet#EVTALLHYPcertificate_valil"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="certificate⊆channel∪{server_end}" org.eventb.core.source="/securityDomainModel/ssl1.bum|org.eventb.core.machineFile#ssl1|org.eventb.core.invariant#elementC"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/securityDomainModel/ssl.bum|org.eventb.core.machineFile#ssl|org.eventb.core.event#element3"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/securityDomainModel/ssl1.bum|org.eventb.core.machineFile#ssl1|org.eventb.core.event#element?"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/securityDomainModel/ssl1.bum|org.eventb.core.machineFile#ssl1|org.eventb.core.invariant#elementC"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/securityDomainModel/ssl1.bpo|org.eventb.core.poFile#ssl1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/securityDomainModel/ssl1.bpo|org.eventb.core.poFile#ssl1|org.eventb.core.poSequent#Server_end\/inv13\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/securityDomainModel/ssl1.bpo|org.eventb.core.poFile#ssl1|org.eventb.core.poPredicateSet#HYPctxt_ssl4|org.eventb.core.poPredicate#PRD0"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="Server_end/inv16/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="3">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/securityDomainModel/ssl1.bpo|org.eventb.core.poFile#ssl1|org.eventb.core.poPredicateSet#EVTALLHYPcertificate_valil"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀t⦂T,cert⦂MSG,server0⦂Agent,client⦂Agent,msg⦂MSG·t∈trans∧msg∈channel∪{server_end}∧cert∈certificate∧server0∈Agent∧client∈Agent∧server0≠client∧t_src(t)=client∧t_bld_dst(t)=server0∧(msg_t{server_end ↦ t3})(msg)=t∧certificate_valid(cert)=(msg_src{server_end ↦ server})(msg)∧Certificate_Cond(cert)=TRUE⇒Verification=TRUE∧(msg_src{server_end ↦ server})(msg)=t_bld_dst(t)" org.eventb.core.source="/securityDomainModel/ssl1.bum|org.eventb.core.machineFile#ssl1|org.eventb.core.invariant#inv1"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/securityDomainModel/ssl.bum|org.eventb.core.machineFile#ssl|org.eventb.core.event#element3"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/securityDomainModel/ssl1.bum|org.eventb.core.machineFile#ssl1|org.eventb.core.event#element?"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/securityDomainModel/ssl1.bum|org.eventb.core.machineFile#ssl1|org.eventb.core.invariant#inv1"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/securityDomainModel/ssl1.bpo|org.eventb.core.poFile#ssl1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/securityDomainModel/ssl1.bpo|org.eventb.core.poFile#ssl1|org.eventb.core.poSequent#Server_end\/inv16\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/securityDomainModel/ssl1.bpo|org.eventb.core.poFile#ssl1|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD3"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poPredicateSet name="EVTIDENTcertificate_valil" org.eventb.core.parentSet="/securityDomainModel/ssl1.bpo|org.eventb.core.poFile#ssl1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="3">
+        <org.eventb.core.poIdentifier name="server" org.eventb.core.type="Agent"/>
+        <org.eventb.core.poIdentifier name="msg_t'" org.eventb.core.type="ℙ(MSG×T)"/>
+        <org.eventb.core.poIdentifier name="msg_dst'" org.eventb.core.type="ℙ(MSG×Agent)"/>
+        <org.eventb.core.poIdentifier name="msg_src'" org.eventb.core.type="ℙ(MSG×Agent)"/>
+        <org.eventb.core.poIdentifier name="channel'" org.eventb.core.type="ℙ(MSG)"/>
+        <org.eventb.core.poIdentifier name="t3" org.eventb.core.type="T"/>
+        <org.eventb.core.poIdentifier name="server_end" org.eventb.core.type="MSG"/>
+        <org.eventb.core.poIdentifier name="client" org.eventb.core.type="Agent"/>
+        <org.eventb.core.poIdentifier name="client_end" org.eventb.core.type="MSG"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPcertificate_valil" org.eventb.core.parentSet="/securityDomainModel/ssl1.bpo|org.eventb.core.poFile#ssl1|org.eventb.core.poPredicateSet#EVTIDENTcertificate_valil" org.eventb.core.poStamp="3">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="t3∈trans" org.eventb.core.source="/securityDomainModel/ssl.bum|org.eventb.core.machineFile#ssl|org.eventb.core.event#element3|org.eventb.core.guard#*"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="client∈Agent∧server∈Agent∧client≠server" org.eventb.core.source="/securityDomainModel/ssl.bum|org.eventb.core.machineFile#ssl|org.eventb.core.event#element3|org.eventb.core.guard#+"/>
+        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="client_end∈channel∧server_end∈MSG ∖ channel" org.eventb.core.source="/securityDomainModel/ssl.bum|org.eventb.core.machineFile#ssl|org.eventb.core.event#element3|org.eventb.core.guard#,"/>
+        <org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="msg_src(client_end)=client" org.eventb.core.source="/securityDomainModel/ssl.bum|org.eventb.core.machineFile#ssl|org.eventb.core.event#element3|org.eventb.core.guard#-"/>
+        <org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="msg_dst(client_end)=server" org.eventb.core.source="/securityDomainModel/ssl.bum|org.eventb.core.machineFile#ssl|org.eventb.core.event#element3|org.eventb.core.guard#."/>
+        <org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="msg_t(client_end)=t3" org.eventb.core.source="/securityDomainModel/ssl.bum|org.eventb.core.machineFile#ssl|org.eventb.core.event#element3|org.eventb.core.guard#\/"/>
+        <org.eventb.core.poPredicate name="PRD6" org.eventb.core.predicate="t_bld_dst(t3)=server" org.eventb.core.source="/securityDomainModel/ssl.bum|org.eventb.core.machineFile#ssl|org.eventb.core.event#element3|org.eventb.core.guard#0"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTIDENTcertificate_valim" org.eventb.core.parentSet="/securityDomainModel/ssl1.bpo|org.eventb.core.poFile#ssl1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="3">
+        <org.eventb.core.poIdentifier name="end'" org.eventb.core.type="ℙ(T)"/>
+        <org.eventb.core.poIdentifier name="server" org.eventb.core.type="Agent"/>
+        <org.eventb.core.poIdentifier name="t_dst'" org.eventb.core.type="ℙ(T×Agent)"/>
+        <org.eventb.core.poIdentifier name="t3" org.eventb.core.type="T"/>
+        <org.eventb.core.poIdentifier name="server_end" org.eventb.core.type="MSG"/>
+        <org.eventb.core.poIdentifier name="client" org.eventb.core.type="Agent"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPcertificate_valim" org.eventb.core.parentSet="/securityDomainModel/ssl1.bpo|org.eventb.core.poFile#ssl1|org.eventb.core.poPredicateSet#EVTIDENTcertificate_valim" org.eventb.core.poStamp="15">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="t3∈trans ∖ end" org.eventb.core.source="/securityDomainModel/ssl.bum|org.eventb.core.machineFile#ssl|org.eventb.core.event#element4|org.eventb.core.guard#*"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="client∈Agent∧server∈Agent∧client≠server" org.eventb.core.source="/securityDomainModel/ssl.bum|org.eventb.core.machineFile#ssl|org.eventb.core.event#element4|org.eventb.core.guard#+"/>
+        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="t_src(t3)=client" org.eventb.core.source="/securityDomainModel/ssl.bum|org.eventb.core.machineFile#ssl|org.eventb.core.event#element4|org.eventb.core.guard#,"/>
+        <org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="server_end∈channel" org.eventb.core.source="/securityDomainModel/ssl.bum|org.eventb.core.machineFile#ssl|org.eventb.core.event#element4|org.eventb.core.guard#-"/>
+        <org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="msg_src(server_end)=server" org.eventb.core.source="/securityDomainModel/ssl.bum|org.eventb.core.machineFile#ssl|org.eventb.core.event#element4|org.eventb.core.guard#."/>
+        <org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="msg_dst(server_end)=client" org.eventb.core.source="/securityDomainModel/ssl.bum|org.eventb.core.machineFile#ssl|org.eventb.core.event#element4|org.eventb.core.guard#\/"/>
+        <org.eventb.core.poPredicate name="PRD6" org.eventb.core.predicate="msg_t(server_end)=t3" org.eventb.core.source="/securityDomainModel/ssl.bum|org.eventb.core.machineFile#ssl|org.eventb.core.event#element4|org.eventb.core.guard#0"/>
+        <org.eventb.core.poPredicate name="PRD7" org.eventb.core.predicate="msg_src(server_end)=t_bld_dst(t3)" org.eventb.core.source="/securityDomainModel/ssl.bum|org.eventb.core.machineFile#ssl|org.eventb.core.event#element4|org.eventb.core.guard#1"/>
+        <org.eventb.core.poPredicate name="PRD8" org.eventb.core.predicate="Session_Key=TRUE" org.eventb.core.source="/securityDomainModel/ssl.bum|org.eventb.core.machineFile#ssl|org.eventb.core.event#element4|org.eventb.core.guard#5"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poSequent name="Attacker/inv13/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="3">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/securityDomainModel/ssl1.bpo|org.eventb.core.poFile#ssl1|org.eventb.core.poPredicateSet#EVTALLHYPcertificate_valin"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="certificate⊆channel∪{intruder_hello}" org.eventb.core.source="/securityDomainModel/ssl1.bum|org.eventb.core.machineFile#ssl1|org.eventb.core.invariant#elementC"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/securityDomainModel/ssl.bum|org.eventb.core.machineFile#ssl|org.eventb.core.event#evt8"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/securityDomainModel/ssl1.bum|org.eventb.core.machineFile#ssl1|org.eventb.core.event#elementA"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/securityDomainModel/ssl1.bum|org.eventb.core.machineFile#ssl1|org.eventb.core.invariant#elementC"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/securityDomainModel/ssl1.bpo|org.eventb.core.poFile#ssl1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/securityDomainModel/ssl1.bpo|org.eventb.core.poFile#ssl1|org.eventb.core.poSequent#Attacker\/inv13\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/securityDomainModel/ssl1.bpo|org.eventb.core.poFile#ssl1|org.eventb.core.poPredicateSet#HYPctxt_ssl4|org.eventb.core.poPredicate#PRD0"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="Attacker/inv16/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="3">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/securityDomainModel/ssl1.bpo|org.eventb.core.poFile#ssl1|org.eventb.core.poPredicateSet#EVTALLHYPcertificate_valin"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀t⦂T,cert⦂MSG,server⦂Agent,client⦂Agent,msg⦂MSG·t∈trans∧msg∈channel∪{intruder_hello}∧cert∈certificate∧server∈Agent∧client∈Agent∧server≠client∧t_src(t)=client∧t_bld_dst(t)=server∧(msg_t{intruder_hello ↦ t1})(msg)=t∧certificate_valid(cert)=(msg_src{intruder_hello ↦ I})(msg)∧Certificate_Cond(cert)=TRUE⇒Verification=TRUE∧(msg_src{intruder_hello ↦ I})(msg)=t_bld_dst(t)" org.eventb.core.source="/securityDomainModel/ssl1.bum|org.eventb.core.machineFile#ssl1|org.eventb.core.invariant#inv1"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/securityDomainModel/ssl.bum|org.eventb.core.machineFile#ssl|org.eventb.core.event#evt8"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/securityDomainModel/ssl1.bum|org.eventb.core.machineFile#ssl1|org.eventb.core.event#elementA"/>
+        <org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/securityDomainModel/ssl1.bum|org.eventb.core.machineFile#ssl1|org.eventb.core.invariant#inv1"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/securityDomainModel/ssl1.bpo|org.eventb.core.poFile#ssl1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/securityDomainModel/ssl1.bpo|org.eventb.core.poFile#ssl1|org.eventb.core.poSequent#Attacker\/inv16\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/securityDomainModel/ssl1.bpo|org.eventb.core.poFile#ssl1|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD3"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poPredicateSet name="EVTIDENTcertificate_valin" org.eventb.core.parentSet="/securityDomainModel/ssl1.bpo|org.eventb.core.poFile#ssl1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="3">
+        <org.eventb.core.poIdentifier name="t1" org.eventb.core.type="T"/>
+        <org.eventb.core.poIdentifier name="msg_t'" org.eventb.core.type="ℙ(MSG×T)"/>
+        <org.eventb.core.poIdentifier name="msg_dst'" org.eventb.core.type="ℙ(MSG×Agent)"/>
+        <org.eventb.core.poIdentifier name="msg_src'" org.eventb.core.type="ℙ(MSG×Agent)"/>
+        <org.eventb.core.poIdentifier name="channel'" org.eventb.core.type="ℙ(MSG)"/>
+        <org.eventb.core.poIdentifier name="intruder_hello" org.eventb.core.type="MSG"/>
+        <org.eventb.core.poIdentifier name="client" org.eventb.core.type="Agent"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPcertificate_valin" org.eventb.core.parentSet="/securityDomainModel/ssl1.bpo|org.eventb.core.poFile#ssl1|org.eventb.core.poPredicateSet#EVTIDENTcertificate_valin" org.eventb.core.poStamp="3">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="t1∈trans" org.eventb.core.source="/securityDomainModel/ssl.bum|org.eventb.core.machineFile#ssl|org.eventb.core.event#evt8|org.eventb.core.guard#*"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="client∈Agent" org.eventb.core.source="/securityDomainModel/ssl.bum|org.eventb.core.machineFile#ssl|org.eventb.core.event#evt8|org.eventb.core.guard#4"/>
+        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="intruder_hello∈MSG ∖ channel" org.eventb.core.source="/securityDomainModel/ssl.bum|org.eventb.core.machineFile#ssl|org.eventb.core.event#evt8|org.eventb.core.guard#,"/>
+        <org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="client≠I" org.eventb.core.source="/securityDomainModel/ssl.bum|org.eventb.core.machineFile#ssl|org.eventb.core.event#evt8|org.eventb.core.guard#5"/>
+        <org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="Attack_Cond=TRUE" org.eventb.core.source="/securityDomainModel/ssl1.bum|org.eventb.core.machineFile#ssl1|org.eventb.core.event#elementA|org.eventb.core.guard#("/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="HYPctxt_ssl4" org.eventb.core.parentSet="/securityDomainModel/ssl1.bpo|org.eventb.core.poFile#ssl1|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="3">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="certificate⊆channel" org.eventb.core.source="/securityDomainModel/ssl1.bum|org.eventb.core.machineFile#ssl1|org.eventb.core.invariant#elementC"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="Certificate_Cond∈certificate → BOOL" org.eventb.core.source="/securityDomainModel/ssl1.bum|org.eventb.core.machineFile#ssl1|org.eventb.core.invariant#elementE"/>
+        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="certificate_valid∈certificate → Agent" org.eventb.core.source="/securityDomainModel/ssl1.bum|org.eventb.core.machineFile#ssl1|org.eventb.core.invariant#elementG"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/securityDomainModel/ssl1.bpo|org.eventb.core.poFile#ssl1|org.eventb.core.poPredicateSet#HYPctxt_ssl4" org.eventb.core.poStamp="3">
+        <org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="∀t⦂T,cert⦂MSG,server⦂Agent,client⦂Agent,msg⦂MSG·t∈trans∧msg∈channel∧cert∈certificate∧server∈Agent∧client∈Agent∧server≠client∧t_src(t)=client∧t_bld_dst(t)=server∧msg_t(msg)=t∧certificate_valid(cert)=msg_src(msg)∧Certificate_Cond(cert)=TRUE⇒Verification=TRUE∧msg_src(msg)=t_bld_dst(t)" org.eventb.core.source="/securityDomainModel/ssl1.bum|org.eventb.core.machineFile#ssl1|org.eventb.core.invariant#inv1"/>
+    </org.eventb.core.poPredicateSet>
+</org.eventb.core.poFile>

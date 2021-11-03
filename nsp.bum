@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.machineFile org.eventb.core.configuration="org.eventb.core.fwd" version="5">
+    <org.eventb.core.event name="'" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="INITIALISATION">
+        <org.eventb.core.action name="'" org.eventb.core.assignment="trans ≔ ∅" org.eventb.core.label="act1"/>
+        <org.eventb.core.action name="(" org.eventb.core.assignment="end ≔ ∅" org.eventb.core.label="act2"/>
+        <org.eventb.core.action name=")" org.eventb.core.assignment="t_src ≔ ∅" org.eventb.core.label="act3"/>
+        <org.eventb.core.action name="*" org.eventb.core.assignment="t_dst ≔ ∅" org.eventb.core.label="act4"/>
+        <org.eventb.core.action name="+" org.eventb.core.assignment="channel ≔ ∅" org.eventb.core.label="act5"/>
+        <org.eventb.core.action name="," org.eventb.core.assignment="msg_src ≔ ∅" org.eventb.core.label="act6"/>
+        <org.eventb.core.action name="-" org.eventb.core.assignment="msg_dst ≔ ∅" org.eventb.core.label="act7"/>
+        <org.eventb.core.action name="." org.eventb.core.assignment="msg_t ≔ ∅" org.eventb.core.label="act8"/>
+        <org.eventb.core.action name="/" org.eventb.core.assignment="t_bld_dst ≔ ∅" org.eventb.core.label="act9"/>
+    </org.eventb.core.event>
+    <org.eventb.core.variable name="(" org.eventb.core.identifier="trans"/>
+    <org.eventb.core.invariant name=")" org.eventb.core.label="inv1" org.eventb.core.predicate="trans ⊆ T"/>
+    <org.eventb.core.variable name="*" org.eventb.core.identifier="end"/>
+    <org.eventb.core.seesContext name="+" org.eventb.core.target="ctxt_nsp"/>
+    <org.eventb.core.variable name="," org.eventb.core.identifier="t_src"/>
+    <org.eventb.core.variable name="-" org.eventb.core.identifier="t_dst"/>
+    <org.eventb.core.variable name="2" org.eventb.core.identifier="t_bld_dst"/>
+    <org.eventb.core.variable name="." org.eventb.core.identifier="channel"/>
+    <org.eventb.core.variable name="/" org.eventb.core.identifier="msg_src"/>
+    <org.eventb.core.variable name="0" org.eventb.core.identifier="msg_dst"/>
+    <org.eventb.core.variable name="1" org.eventb.core.identifier="msg_t"/>
+    <org.eventb.core.invariant name="3" org.eventb.core.label="inv2" org.eventb.core.predicate="end ⊆ trans"/>
+    <org.eventb.core.invariant name="4" org.eventb.core.label="inv3" org.eventb.core.predicate="t_src ∈ trans → Agent "/>
+    <org.eventb.core.invariant name="5" org.eventb.core.label="inv4" org.eventb.core.predicate="t_dst ∈ end → Agent"/>
+    <org.eventb.core.invariant name=":" org.eventb.core.label="inv5" org.eventb.core.predicate="t_bld_dst ∈ trans → Agent"/>
+    <org.eventb.core.invariant name="6" org.eventb.core.label="inv6" org.eventb.core.predicate="channel ⊆ MSG"/>
+    <org.eventb.core.invariant name="7" org.eventb.core.label="inv7" org.eventb.core.predicate="msg_src ∈ channel → Agent"/>
+    <org.eventb.core.invariant name="8" org.eventb.core.label="inv8" org.eventb.core.predicate="msg_dst ∈ channel → Agent"/>
+    <org.eventb.core.invariant name="9" org.eventb.core.label="inv9" org.eventb.core.predicate="msg_t ∈ channel → T"/>
+    <org.eventb.core.invariant name=";" org.eventb.core.label="inv10" org.eventb.core.predicate="∀t·t ∈ end ⇒ t_dst(t) = t_bld_dst(t)"/>
+    <org.eventb.core.event name="=" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="Init_trans">
+        <org.eventb.core.parameter name="'" org.eventb.core.identifier="t"/>
+        <org.eventb.core.guard name="*" org.eventb.core.label="grd1" org.eventb.core.predicate="t ∈ T ∖ trans"/>
+        <org.eventb.core.action name="," org.eventb.core.assignment="trans ≔ trans ∪ {t}" org.eventb.core.label="act1"/>
+        <org.eventb.core.action name="-" org.eventb.core.assignment="t_src(t) ≔ A" org.eventb.core.label="act2"/>
+        <org.eventb.core.action name="." org.eventb.core.assignment="t_bld_dst(t) ≔ B" org.eventb.core.label="act3"/>
+        <org.eventb.core.parameter name="/" org.eventb.core.identifier="A"/>
+        <org.eventb.core.parameter name="0" org.eventb.core.identifier="B"/>
+        <org.eventb.core.guard name="1" org.eventb.core.label="grd2" org.eventb.core.predicate="A ∈ Agent ∧ B ∈ Agent ∧ A ≠ B"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="&gt;" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="Answer_trans">
+        <org.eventb.core.parameter name=")" org.eventb.core.identifier="t"/>
+        <org.eventb.core.action name="," org.eventb.core.assignment="channel ≔ channel ∪ {msg}" org.eventb.core.label="act1"/>
+        <org.eventb.core.guard name="-" org.eventb.core.label="grd1" org.eventb.core.predicate="t ∈ trans "/>
+        <org.eventb.core.parameter name="3" org.eventb.core.identifier="A"/>
+        <org.eventb.core.parameter name="4" org.eventb.core.identifier="B"/>
+        <org.eventb.core.parameter name="." org.eventb.core.identifier="msg"/>
+        <org.eventb.core.guard name="5" org.eventb.core.label="grd2" org.eventb.core.predicate="A ∈ Agent ∧ B ∈ Agent ∧ A ≠ B"/>
+        <org.eventb.core.guard name="/" org.eventb.core.label="grd3" org.eventb.core.predicate="msg ∈ MSG ∖ channel"/>
+        <org.eventb.core.action name="0" org.eventb.core.assignment="msg_src(msg) ≔ B" org.eventb.core.label="act2"/>
+        <org.eventb.core.action name="1" org.eventb.core.assignment="msg_dst(msg) ≔ A" org.eventb.core.label="act3"/>
+        <org.eventb.core.action name="2" org.eventb.core.assignment="msg_t(msg) ≔ t" org.eventb.core.label="act4"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="?" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="End_trans">
+        <org.eventb.core.parameter name="'" org.eventb.core.identifier="t"/>
+        <org.eventb.core.guard name="*" org.eventb.core.label="grd1" org.eventb.core.predicate="t ∈ trans ∖ end"/>
+        <org.eventb.core.guard name="grd1" org.eventb.core.label="grd2" org.eventb.core.predicate="A ∈ Agent ∧ B ∈ Agent ∧ A ≠ B"/>
+        <org.eventb.core.guard name="," org.eventb.core.label="grd3" org.eventb.core.predicate="t_src(t) = A"/>
+        <org.eventb.core.guard name="-" org.eventb.core.label="grd4" org.eventb.core.predicate="msg ∈ channel"/>
+        <org.eventb.core.guard name="." org.eventb.core.label="grd5" org.eventb.core.predicate="msg_src(msg) = B"/>
+        <org.eventb.core.guard name="/" org.eventb.core.label="grd6" org.eventb.core.predicate="msg_dst(msg) = A"/>
+        <org.eventb.core.guard name="0" org.eventb.core.label="grd7" org.eventb.core.predicate="msg_t(msg) = t"/>
+        <org.eventb.core.guard name="1" org.eventb.core.label="grd8" org.eventb.core.predicate="msg_src(msg) = t_bld_dst(t)"/>
+        <org.eventb.core.action name="2" org.eventb.core.assignment="end ≔ end ∪ {t}" org.eventb.core.label="act1"/>
+        <org.eventb.core.action name="3" org.eventb.core.assignment="t_dst(t) ≔ B" org.eventb.core.label="act2"/>
+        <org.eventb.core.parameter name="4" org.eventb.core.identifier="msg"/>
+        <org.eventb.core.parameter name="element1" org.eventb.core.identifier="A"/>
+        <org.eventb.core.parameter name="element2" org.eventb.core.identifier="B"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="@" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="Attacker">
+        <org.eventb.core.parameter name="'" org.eventb.core.identifier="t"/>
+        <org.eventb.core.parameter name=")" org.eventb.core.identifier="msg"/>
+        <org.eventb.core.parameter name="element1" org.eventb.core.identifier="A"/>
+        <org.eventb.core.guard name="*" org.eventb.core.label="grd1" org.eventb.core.predicate="t ∈ T"/>
+        <org.eventb.core.guard name="element2" org.eventb.core.label="grd3" org.eventb.core.predicate="A ∈ Agent"/>
+        <org.eventb.core.guard name="," org.eventb.core.label="grd2" org.eventb.core.predicate="msg ∈ MSG ∖ channel"/>
+        <org.eventb.core.action name="." org.eventb.core.assignment="channel ≔ channel ∪ {msg}" org.eventb.core.label="act1"/>
+        <org.eventb.core.action name="/" org.eventb.core.assignment="msg_src(msg) ≔ I" org.eventb.core.label="act2"/>
+        <org.eventb.core.action name="0" org.eventb.core.assignment="msg_dst(msg) ≔ A" org.eventb.core.label="act3"/>
+        <org.eventb.core.action name="1" org.eventb.core.assignment="msg_t(msg) ≔ t" org.eventb.core.label="act4"/>
+        <org.eventb.core.guard name="element3" org.eventb.core.label="grd4" org.eventb.core.predicate="A ≠ I"/>
+    </org.eventb.core.event>
+</org.eventb.core.machineFile>

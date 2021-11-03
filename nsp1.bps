@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.psFile>
+    <org.eventb.core.psStatus name="inv14/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="19" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="INITIALISATION/inv11/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="24" org.eventb.core.psBroken="true" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="INITIALISATION/inv12/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="24" org.eventb.core.psBroken="true" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="INITIALISATION/inv13/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="24" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="INITIALISATION/inv14/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="24" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="Init_trans/inv14/INV" org.eventb.core.confidence="0" org.eventb.core.poStamp="19" org.eventb.core.psManual="true"/>
+    <org.eventb.core.psStatus name="Answer_trans/grd4/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="19" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="Answer_trans/inv13/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="19" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="Answer_trans/inv14/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="19" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="Answer_trans/act5/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="19" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="End_trans/grd6/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="22" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="End_trans/grd7/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="22" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="End_trans/grd5/GRD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="22" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="End_trans/grd6/GRD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="22" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="End_trans/grd8/GRD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="22" org.eventb.core.psManual="true"/>
+    <org.eventb.core.psStatus name="Attacker/inv13/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="20" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="Attacker/inv14/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="19" org.eventb.core.psBroken="true" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="Attacker/act5/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="20" org.eventb.core.psManual="false"/>
+</org.eventb.core.psFile>

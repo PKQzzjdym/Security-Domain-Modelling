@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.poFile org.eventb.core.poStamp="0">
+    <org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="T" org.eventb.core.type="ℙ(T)"/>
+        <org.eventb.core.poIdentifier name="Agent" org.eventb.core.type="ℙ(Agent)"/>
+        <org.eventb.core.poIdentifier name="MSG" org.eventb.core.type="ℙ(MSG)"/>
+        <org.eventb.core.poIdentifier name="I" org.eventb.core.type="Agent"/>
+        <org.eventb.core.poPredicate name="Agenu" org.eventb.core.predicate="I∈Agent" org.eventb.core.source="/securityDomainModel/ctxt_aka.buc|org.eventb.core.contextFile#ctxt_aka|org.eventb.core.axiom#axm1"/>
+        <org.eventb.core.poIdentifier name="Key" org.eventb.core.type="ℙ(Key)"/>
+        <org.eventb.core.poIdentifier name="Attack_Cond" org.eventb.core.type="BOOL"/>
+        <org.eventb.core.poPredicate name="Attack_Cone" org.eventb.core.predicate="partition(Agent)" org.eventb.core.source="/securityDomainModel/ctxt_aka1.buc|org.eventb.core.contextFile#ctxt_aka1|org.eventb.core.axiom#axm1"/>
+        <org.eventb.core.poPredicate name="Attack_Conf" org.eventb.core.predicate="Attack_Cond∈BOOL" org.eventb.core.source="/securityDomainModel/ctxt_aka1.buc|org.eventb.core.contextFile#ctxt_aka1|org.eventb.core.axiom#axm4"/>
+        <org.eventb.core.poIdentifier name="SQN" org.eventb.core.type="ℙ(SQN)"/>
+        <org.eventb.core.poIdentifier name="RAND" org.eventb.core.type="ℙ(RAND)"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/securityDomainModel/ctxt_aka2.bpo|org.eventb.core.poFile#ctxt_aka2|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="0"/>
+</org.eventb.core.poFile>

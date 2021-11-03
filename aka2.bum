@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.machineFile org.eventb.core.configuration="org.eventb.core.fwd" version="5">
+    <org.eventb.core.refinesMachine name="'" org.eventb.core.target="aka1"/>
+    <org.eventb.core.seesContext name="(" org.eventb.core.target="ctxt_aka1"/>
+    <org.eventb.core.variable name=")" org.eventb.core.identifier="trans"/>
+    <org.eventb.core.variable name="+" org.eventb.core.identifier="end"/>
+    <org.eventb.core.variable name="-" org.eventb.core.identifier="t_src"/>
+    <org.eventb.core.variable name="/" org.eventb.core.identifier="t_dst"/>
+    <org.eventb.core.variable name="1" org.eventb.core.identifier="t_bld_dst"/>
+    <org.eventb.core.variable name="3" org.eventb.core.identifier="channel"/>
+    <org.eventb.core.variable name="5" org.eventb.core.identifier="msg_src"/>
+    <org.eventb.core.variable name="7" org.eventb.core.identifier="msg_dst"/>
+    <org.eventb.core.variable name="9" org.eventb.core.identifier="msg_t"/>
+    <org.eventb.core.variable name="inv17" org.eventb.core.identifier="user"/>
+    <org.eventb.core.variable name="inv19" org.eventb.core.identifier="network"/>
+    <org.eventb.core.variable name="inv1N" org.eventb.core.identifier="Protocol_Finish"/>
+    <org.eventb.core.variable name="var1" org.eventb.core.identifier="Session_Key"/>
+    <org.eventb.core.variable name="inv1G" org.eventb.core.identifier="Veri_User"/>
+    <org.eventb.core.variable name="inv1I" org.eventb.core.identifier="Veri_Network"/>
+    <org.eventb.core.event name="inv1O" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="INITIALISATION">
+        <org.eventb.core.action name="'" org.eventb.core.assignment="Agent_Pc_key ≔ ∅" org.eventb.core.label="act16"/>
+        <org.eventb.core.action name="(" org.eventb.core.assignment="Agent_Pv_key ≔ ∅" org.eventb.core.label="act17"/>
+        <org.eventb.core.action name=")" org.eventb.core.assignment="msg_key ≔ ∅" org.eventb.core.label="act18"/>
+        <org.eventb.core.action name="*" org.eventb.core.assignment="K_Mem ≔ ∅" org.eventb.core.label="act19"/>
+        <org.eventb.core.action name="+" org.eventb.core.assignment="M_Mem ≔ ∅" org.eventb.core.label="act20"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="inv1P" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="Protocol_Initialization">
+        <org.eventb.core.refinesEvent name="'" org.eventb.core.target="Protocol_Initialization"/>
+        <org.eventb.core.guard name="internal2" org.eventb.core.label="grd4" org.eventb.core.predicate="HN ∈ network ∧ SN ≠ HN"/>
+        <org.eventb.core.parameter name="(" org.eventb.core.identifier="HN"/>
+        <org.eventb.core.guard name="internal3" org.eventb.core.label="grd5" org.eventb.core.predicate="Agent_Pc_key(HN) ∈ K_Mem(Subscriber)"/>
+        <org.eventb.core.action name="internal4" org.eventb.core.assignment="msg_key(SUCI) ≔ Agent_Pc_key(HN)" org.eventb.core.label="act8"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="inv1Q" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="SN_Initialization">
+        <org.eventb.core.refinesEvent name="'" org.eventb.core.target="SN_Initialization"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="inv1R" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="HN_to_SN">
+        <org.eventb.core.refinesEvent name="'" org.eventb.core.target="HN_to_SN"/>
+        <org.eventb.core.parameter name="'" org.eventb.core.identifier="HN"/>
+        <org.eventb.core.parameter name="(" org.eventb.core.identifier="SN"/>
+        <org.eventb.core.parameter name="3" org.eventb.core.identifier="t1"/>
+        <org.eventb.core.parameter name="5" org.eventb.core.identifier="SS"/>
+        <org.eventb.core.parameter name="internal1" org.eventb.core.identifier="RAHK"/>
+        <org.eventb.core.guard name="internal1" org.eventb.core.label="grd1" org.eventb.core.predicate="t1 ∈ trans"/>
+        <org.eventb.core.guard name="+" org.eventb.core.label="grd2" org.eventb.core.predicate="HN ∈ network ∧ SN ∈ network ∧ HN ≠ SN"/>
+        <org.eventb.core.guard name="4" org.eventb.core.label="grd3" org.eventb.core.predicate="SS ∈ channel ⇒ SUCI ∈ channel"/>
+        <org.eventb.core.guard name="," org.eventb.core.label="grd4" org.eventb.core.predicate="msg_src(SS) = SN"/>
+        <org.eventb.core.guard name="-" org.eventb.core.label="grd5" org.eventb.core.predicate="msg_dst(SS) = HN"/>
+        <org.eventb.core.guard name="." org.eventb.core.label="grd6" org.eventb.core.predicate="msg_t(SS) = t1"/>
+        <org.eventb.core.guard name="(" org.eventb.core.label="grd7" org.eventb.core.predicate="msg_key(SUCI) = Agent_Pc_key(HN)" org.eventb.core.theorem="true"/>
+        <org.eventb.core.guard name="*" org.eventb.core.label="grd8" org.eventb.core.predicate="RAHK ∈ MSG ∖ channel"/>
+        <org.eventb.core.action name="6" org.eventb.core.assignment="channel ≔ channel ∪ {RAHK}" org.eventb.core.label="act1"/>
+        <org.eventb.core.action name="0" org.eventb.core.assignment="msg_src(RAHK) ≔ HN" org.eventb.core.label="act2"/>
+        <org.eventb.core.action name="1" org.eventb.core.assignment="msg_dst(RAHK) ≔ SN" org.eventb.core.label="act3"/>
+        <org.eventb.core.action name="2" org.eventb.core.assignment="msg_t(RAHK) ≔ t1" org.eventb.core.label="act4"/>
+        <org.eventb.core.parameter name="internal2" org.eventb.core.identifier="SUCI"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="inv1S" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="SN_receive">
+        <org.eventb.core.refinesEvent name="'" org.eventb.core.target="SN_receive"/>
+        <org.eventb.core.parameter name="'" org.eventb.core.identifier="SN"/>
+        <org.eventb.core.parameter name="(" org.eventb.core.identifier="HN"/>
+        <org.eventb.core.parameter name=")" org.eventb.core.identifier="t1"/>
+        <org.eventb.core.guard name="*" org.eventb.core.label="grd1" org.eventb.core.predicate="t1 ∈ trans ∖ end"/>
+        <org.eventb.core.guard name="5" org.eventb.core.label="grd2" org.eventb.core.predicate="HN ∈ network ∧ SN ∈ network ∧ HN ≠ SN"/>
+        <org.eventb.core.guard name="6" org.eventb.core.label="grd9" org.eventb.core.predicate="RAHK ∈ channel"/>
+        <org.eventb.core.guard name="," org.eventb.core.label="grd4" org.eventb.core.predicate="msg_src(RAHK) = HN"/>
+        <org.eventb.core.guard name="-" org.eventb.core.label="grd5" org.eventb.core.predicate="msg_dst(RAHK) = SN"/>
+        <org.eventb.core.guard name="." org.eventb.core.label="grd6" org.eventb.core.predicate="msg_t(RAHK) = t1"/>
+        <org.eventb.core.guard name="/" org.eventb.core.label="grd7" org.eventb.core.predicate="t_src(t1) = SN"/>
+        <org.eventb.core.guard name="0" org.eventb.core.label="grd8" org.eventb.core.predicate="msg_src(RAHK) = t_bld_dst(t1) ⇒ SEAF ∈ Key ∧ SEAF ∈ K_Mem(SN)"/>
+        <org.eventb.core.action name="2" org.eventb.core.assignment="end ≔ end ∪ {t1}" org.eventb.core.label="act1"/>
+        <org.eventb.core.action name="3" org.eventb.core.assignment="t_dst(t1) ≔ HN" org.eventb.core.label="act2"/>
+        <org.eventb.core.parameter name="4" org.eventb.core.identifier="RAHK"/>
+        <org.eventb.core.parameter name="7" org.eventb.core.identifier="SEAF"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="inv1T" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="SN_to_Subscriber">
+        <org.eventb.core.refinesEvent name="'" org.eventb.core.target="SN_to_Subscriber"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="inv1U" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="Subscriber_receive">
+        <org.eventb.core.refinesEvent name="'" org.eventb.core.target="Subscriber_receive"/>
+        <org.eventb.core.parameter name="'" org.eventb.core.identifier="Subscriber"/>
+        <org.eventb.core.parameter name="internal1" org.eventb.core.identifier="SN"/>
+        <org.eventb.core.parameter name=")" org.eventb.core.identifier="t2"/>
+        <org.eventb.core.guard name="*" org.eventb.core.label="grd1" org.eventb.core.predicate="t2 ∈ trans"/>
+        <org.eventb.core.guard name="+" org.eventb.core.label="grd2" org.eventb.core.predicate="SN ∈ network ∧ Subscriber ∈ user"/>
+        <org.eventb.core.guard name="-" org.eventb.core.label="grd3" org.eventb.core.predicate="RA ∈ channel"/>
+        <org.eventb.core.guard name="." org.eventb.core.label="grd4" org.eventb.core.predicate="msg_src(RA) = SN"/>
+        <org.eventb.core.guard name="/" org.eventb.core.label="grd5" org.eventb.core.predicate="msg_dst(RA) = Subscriber"/>
+        <org.eventb.core.guard name="0" org.eventb.core.label="grd6" org.eventb.core.predicate="msg_t(RA) = t2"/>
+        <org.eventb.core.parameter name="4" org.eventb.core.identifier="RA"/>
+        <org.eventb.core.parameter name="5" org.eventb.core.identifier="RES"/>
+        <org.eventb.core.action name="2" org.eventb.core.assignment="channel ≔ channel ∪ {RES} " org.eventb.core.label="act1"/>
+        <org.eventb.core.action name="3" org.eventb.core.assignment="msg_src(RES) ≔ Subscriber" org.eventb.core.label="act2"/>
+        <org.eventb.core.action name="6" org.eventb.core.assignment="msg_dst(RES) ≔ SN" org.eventb.core.label="act3"/>
+        <org.eventb.core.action name="7" org.eventb.core.assignment="msg_t(RES) ≔ t2 " org.eventb.core.label="act4"/>
+        <org.eventb.core.parameter name="(" org.eventb.core.identifier="HN"/>
+        <org.eventb.core.guard name="," org.eventb.core.label="grd7" org.eventb.core.predicate="t_bld_dst(t2) = Subscriber"/>
+        <org.eventb.core.guard name=")" org.eventb.core.label="grd8" org.eventb.core.predicate="HN ∈ network ∧ SN ≠ HN"/>
+        <org.eventb.core.guard name="internal2" org.eventb.core.label="grd9" org.eventb.core.predicate="Veri_User(Subscriber) = HN ⇒ SEAF ∈ Key ∧ SEAF ∈ K_Mem(Subscriber) ∧ RES ∈ MSG ∖ channel"/>
+        <org.eventb.core.parameter name="internal3" org.eventb.core.identifier="SEAF"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="inv1V" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="SN_verify">
+        <org.eventb.core.refinesEvent name="'" org.eventb.core.target="SN_verify"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="inv1W" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="HN_initialise">
+        <org.eventb.core.refinesEvent name="'" org.eventb.core.target="HN_initialise"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="inv1X" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="HN_verify">
+        <org.eventb.core.refinesEvent name="'" org.eventb.core.target="HN_verify"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="inv1Y" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="End">
+        <org.eventb.core.refinesEvent name="'" org.eventb.core.target="End"/>
+        <org.eventb.core.parameter name="'" org.eventb.core.identifier="SN"/>
+        <org.eventb.core.parameter name="(" org.eventb.core.identifier="HN"/>
+        <org.eventb.core.parameter name=")" org.eventb.core.identifier="t3"/>
+        <org.eventb.core.guard name="*" org.eventb.core.label="grd1" org.eventb.core.predicate="t3 ∈ trans ∖ end"/>
+        <org.eventb.core.guard name="+" org.eventb.core.label="grd2" org.eventb.core.predicate="SN ∈ network ∧ HN ∈ network ∧ SN ≠ HN"/>
+        <org.eventb.core.guard name="," org.eventb.core.label="grd3" org.eventb.core.predicate="t_src(t3) = SN"/>
+        <org.eventb.core.guard name="-" org.eventb.core.label="grd4" org.eventb.core.predicate="SUPI ∈ channel"/>
+        <org.eventb.core.guard name="." org.eventb.core.label="grd5" org.eventb.core.predicate="msg_src(SUPI) = HN"/>
+        <org.eventb.core.guard name="/" org.eventb.core.label="grd6" org.eventb.core.predicate="msg_dst(SUPI) = SN"/>
+        <org.eventb.core.guard name="0" org.eventb.core.label="grd7" org.eventb.core.predicate="msg_t(SUPI) = t3"/>
+        <org.eventb.core.guard name="1" org.eventb.core.label="grd8" org.eventb.core.predicate="msg_src(SUPI) = t_bld_dst(t3)"/>
+        <org.eventb.core.action name="2" org.eventb.core.assignment="end ≔ end ∪ {t3}" org.eventb.core.label="act1"/>
+        <org.eventb.core.action name="3" org.eventb.core.assignment="t_dst(t3) ≔ HN" org.eventb.core.label="act2"/>
+        <org.eventb.core.parameter name="4" org.eventb.core.identifier="SUPI"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="inv1Z" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="Attacker">
+        <org.eventb.core.refinesEvent name="'" org.eventb.core.target="Attacker"/>
+        <org.eventb.core.parameter name="'" org.eventb.core.identifier="t"/>
+        <org.eventb.core.parameter name=")" org.eventb.core.identifier="msg"/>
+        <org.eventb.core.parameter name="element1" org.eventb.core.identifier="Subscriber"/>
+        <org.eventb.core.guard name="*" org.eventb.core.label="grd1" org.eventb.core.predicate="t ∈ T"/>
+        <org.eventb.core.guard name="," org.eventb.core.label="grd2" org.eventb.core.predicate="msg ∈ MSG ∖ channel"/>
+        <org.eventb.core.guard name="element2" org.eventb.core.label="grd3" org.eventb.core.predicate="Subscriber ∈ user"/>
+        <org.eventb.core.action name="." org.eventb.core.assignment="channel ≔ channel ∪ {msg}" org.eventb.core.label="act1"/>
+        <org.eventb.core.action name="/" org.eventb.core.assignment="msg_src(msg) ≔ I" org.eventb.core.label="act2"/>
+        <org.eventb.core.action name="1" org.eventb.core.assignment="msg_t(msg) ≔ t" org.eventb.core.label="act4"/>
+        <org.eventb.core.guard name="element3" org.eventb.core.label="grd4" org.eventb.core.predicate="I ∈ network"/>
+        <org.eventb.core.guard name="(" org.eventb.core.label="grd5" org.eventb.core.predicate="t ∈ M_Mem(I)"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="evt1" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="Attacker_Mem">
+        <org.eventb.core.parameter name="'" org.eventb.core.identifier="t"/>
+        <org.eventb.core.parameter name="(" org.eventb.core.identifier="msg"/>
+        <org.eventb.core.parameter name="element1" org.eventb.core.identifier="Subscriber"/>
+        <org.eventb.core.guard name="element2" org.eventb.core.label="grd1" org.eventb.core.predicate="Subscriber ∈ user ∧ HN ∈ network"/>
+        <org.eventb.core.guard name="*" org.eventb.core.label="grd2" org.eventb.core.predicate="msg ∈ channel"/>
+        <org.eventb.core.guard name="+" org.eventb.core.label="grd3" org.eventb.core.predicate="msg_t(msg) = t"/>
+        <org.eventb.core.action name="," org.eventb.core.assignment="M_Mem(I) ≔ M_Mem(I) ∪ {t}" org.eventb.core.label="act1"/>
+        <org.eventb.core.guard name="-" org.eventb.core.label="grd4" org.eventb.core.predicate="msg_key(msg) = Agent_Pc_key(HN)"/>
+        <org.eventb.core.parameter name="element3" org.eventb.core.identifier="HN"/>
+    </org.eventb.core.event>
+    <org.eventb.core.variable name="inv1[" org.eventb.core.identifier="Agent_Pc_key"/>
+    <org.eventb.core.invariant name="inv1\" org.eventb.core.label="inv19" org.eventb.core.predicate="Agent_Pc_key ∈ Agent ⇸ Key"/>
+    <org.eventb.core.variable name="inv1]" org.eventb.core.identifier="Agent_Pv_key"/>
+    <org.eventb.core.invariant name="inv1^" org.eventb.core.label="inv20" org.eventb.core.predicate="Agent_Pv_key ∈ Agent ⇸ Key"/>
+    <org.eventb.core.variable name="inv1_" org.eventb.core.identifier="msg_key"/>
+    <org.eventb.core.invariant name="inv1`" org.eventb.core.label="inv21" org.eventb.core.predicate="msg_key ∈ channel ⇸ Key"/>
+    <org.eventb.core.variable name="inv1a" org.eventb.core.identifier="K_Mem"/>
+    <org.eventb.core.invariant name="inv1b" org.eventb.core.label="inv22" org.eventb.core.predicate="K_Mem ∈ Agent → ℙ(Key)"/>
+    <org.eventb.core.variable name="inv1c" org.eventb.core.identifier="M_Mem"/>
+    <org.eventb.core.invariant name="inv1d" org.eventb.core.label="inv23" org.eventb.core.predicate="M_Mem ∈ Agent → ℙ(T)"/>
+    <org.eventb.core.invariant name="inv1e" org.eventb.core.label="inv24" org.eventb.core.predicate="∀t·t ∈ M_Mem(I) ⇒ Attack_Cond = TRUE"/>
+    <org.eventb.core.invariant name="inv1f" org.eventb.core.label="inv25" org.eventb.core.predicate="∀SEAF,Subscriber,SN·Subscriber ∈ user ∧ SN ∈ network ∧ SEAF ∈ Key ∧ SEAF ∈ K_Mem(Subscriber) ∧ SEAF ∈ K_Mem(SN) ∧ Protocol_Finish = TRUE ⇒ Session_Key = TRUE"/>
+</org.eventb.core.machineFile>

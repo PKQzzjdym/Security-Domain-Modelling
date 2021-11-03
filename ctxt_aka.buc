@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.contextFile org.eventb.core.configuration="org.eventb.core.fwd" version="3">
+    <org.eventb.core.carrierSet name="set1" org.eventb.core.identifier="T"/>
+    <org.eventb.core.carrierSet name="set2" org.eventb.core.identifier="Agent"/>
+    <org.eventb.core.carrierSet name="set3" org.eventb.core.identifier="MSG"/>
+    <org.eventb.core.constant name="cst1" org.eventb.core.identifier="I"/>
+    <org.eventb.core.axiom name="axm1" org.eventb.core.label="axm1" org.eventb.core.predicate="I ∈ Agent"/>
+</org.eventb.core.contextFile>
